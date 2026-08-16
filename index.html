@@ -24,6 +24,8 @@
 </head>
 <body>
 
+<canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
 <!-- ═══════════════════════════════════════════════════════════════
  LOADER
 ══════════════════════════════════════════════════════════════════ -->
@@ -71,8 +73,18 @@
  </li>
  </ul>
 
- <div class="nav-ctas">
- <a href="https://www.linkedin.com/in/jaswanth-kadali-a969701ba/" target="_blank" rel="noopener" class="nav-btn nav-btn-desktop">LinkedIn ↗</a>
+   <div class="nav-ctas">
+  <div class="theme-switch-wrap nav-btn-desktop" title="Change Theme Glow">
+    <div class="theme-dot active" data-theme-val="cyan" title="Cyber Cyan"></div>
+    <div class="theme-dot" data-theme-val="purple" title="Electric Violet"></div>
+    <div class="theme-dot" data-theme-val="green" title="Matrix Green"></div>
+    <div class="theme-dot" data-theme-val="amber" title="Aerospace Amber"></div>
+    <div class="theme-dot" data-theme-val="rose" title="Laser Rose"></div>
+  </div>
+  <button class="cli-trigger-btn nav-btn-desktop" id="open-terminal-btn" aria-label="Open Command Terminal">
+    <span>&gt;_ CLI</span>
+  </button>
+  <a href="https://www.linkedin.com/in/jaswanth-kadali-a969701ba/" target="_blank" rel="noopener" class="nav-btn nav-btn-desktop">LinkedIn ↗</a>
  <a href="assets/documents/Jaswanth_Kadali_Resume.pdf" download class="nav-btn primary nav-btn-desktop">Resume ↓</a>
  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
  <span></span><span></span><span></span>
@@ -654,5 +666,38 @@
 </div>
 
 <script src="script.js?v=1.0.7"></script>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     LIVE TELEMETRY HUD
+══════════════════════════════════════════════════════════════════ -->
+<div id="live-telemetry" class="live-telemetry" aria-label="System Telemetry">
+  <div class="telemetry-item"><span class="telemetry-dot"></span>SYS: <span class="telemetry-val">ONLINE</span></div>
+  <div class="telemetry-item telemetry-desktop-only">POS: <span id="tel-pos" class="telemetry-val">X: 0 Y: 0</span></div>
+  <div class="telemetry-item">SCROLL: <span id="tel-scroll" class="telemetry-val">0%</span></div>
+  <div class="telemetry-item telemetry-desktop-only">FPS: <span id="tel-fps" class="telemetry-val">60</span></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     CLI TERMINAL MODAL
+══════════════════════════════════════════════════════════════════ -->
+<div id="terminal-modal" role="dialog" aria-modal="true" aria-label="Interactive Terminal" onclick="if(event.target===this)closeTerminal()">
+  <div class="terminal-box">
+    <div class="terminal-header">
+      <span class="terminal-title">jaswanth@robotics-core: ~/portfolio (v2.4)</span>
+      <button class="terminal-close" onclick="closeTerminal()" aria-label="Close Terminal">✕</button>
+    </div>
+    <div class="terminal-body" id="terminal-body">
+      <div class="terminal-output" id="terminal-output">
+        <div style="color:var(--accent); font-weight:700; margin-bottom:0.5rem;">JASWANTH KADALI — ENGINEERING SYSTEM CORE [ONLINE]</div>
+        <div style="color:var(--muted-2); margin-bottom:0.8rem;">Type <span style="color:var(--accent)">help</span> to list available commands or <span style="color:var(--accent)">projects</span> to inspect case studies.</div>
+      </div>
+      <div class="terminal-prompt-line">
+        <span class="terminal-prompt-symbol">&gt;</span>
+        <input type="text" id="terminal-input" class="terminal-input" placeholder="Type a command (e.g. 'help', 'matrix', 'projects')..." autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
