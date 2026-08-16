@@ -254,6 +254,16 @@ const INTERESTS_PHOTOS = [
 
 const CERTIFICATES = [
   {
+    id: 'iit-delhi-ansys-cad',
+    title: 'CAD Designing & ANSYS Analysis — Summer Internship Program',
+    issuer: 'Course Central × TRYST IIT Delhi',
+    category: 'CAD & Simulation',
+    date: 'May - Jun 2025',
+    skills: ['ANSYS FEA Structural', 'CAD Modeling', 'TRYST IIT Delhi', 'Stress Analysis', 'Finite Element Method'],
+    thumb: 'assets/certificates/previews/Jaswanth_Kadali_IIT_Delhi_CAD_ANSYS_thumb.jpg',
+    pdf: 'assets/certificates/Jaswanth_Kadali_IIT_Delhi_CAD_ANSYS.jpg'
+  },
+  {
     id: 'nidar-dfi-cert',
     title: 'NIDAR — National Innovation Challenge for Drone Application & Research (PR1 Final Mission)',
     issuer: 'Drone Federation of India (DFI) × MeitY × Gautam Buddha University',
