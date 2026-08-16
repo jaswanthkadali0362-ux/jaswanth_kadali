@@ -296,7 +296,7 @@ const CERTIFICATES = [
   {
     id: 'agkc-motorsport-2025',
     title: 'AGKC 2025 Season II — National Level Go Karting Championship',
-    issuer: 'AITAM × SmartBridge × Institution's Innovation Council',
+    issuer: "AITAM × SmartBridge × Institution's Innovation Council",
     category: 'Motorsports & UAV',
     date: 'Mar 2025',
     skills: ['Motorsport Engineering', 'Go-Kart Chassis Dynamics', 'Track Endurance', 'Vehicle Fabrication'],
