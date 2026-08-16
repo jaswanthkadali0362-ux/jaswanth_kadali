@@ -17,7 +17,7 @@ const PROJECTS = [
     summary: 'Built a fully autonomous quadcopter using Pixhawk Cube Orange flight controller and Jetson Nano onboard computer, featuring custom impact-absorbing arm geometry, GPS waypoint navigation, and real-time computer vision.',
     cover: 'assets/projects/covers/nidar_drone_cover.svg',
     image: 'assets/projects/nidar/nidar_main.jpg',
-    video: null,
+    video: 'assets/videos/nidar_quadcopter_tuning.mp4',
     tags: ['Pixhawk Cube Orange', 'Jetson Nano', 'Autonomous Flight', 'Computer Vision', 'ROS 2'],
     specs: {
       'Flight Controller': 'Pixhawk Cube Orange',
@@ -25,6 +25,15 @@ const PROJECTS = [
       'Autonomy Stack': 'ArduPilot + ROS 2',
       'Frame': 'Custom Impact-Absorbing Arms'
     },
+    gallery: [
+      { src: 'assets/projects/nidar/nidar_main.jpg', title: 'Assembled NIDAR Drone Frame', desc: 'Custom impact-absorbing carbon fiber arm assembly & landing struts' },
+      { src: 'assets/projects/nidar/nidar_photo_1.jpg', title: 'Pixhawk Cube Orange Avionics', desc: 'Triple-redundant IMU mounting, vibration dampening & power distribution' },
+      { src: 'assets/projects/nidar/nidar_photo_2.jpg', title: 'NVIDIA Jetson Nano Setup', desc: 'ROS 2 edge intelligence for real-time computer vision & telemetry' },
+      { src: 'assets/projects/nidar/nidar_photo_3.jpg', title: 'Test Bench Assembly', desc: 'Quadcopter frame rigidity & arm structural validation' },
+      { src: 'assets/projects/nidar/nidar_photo_4.jpg', title: 'Flight-Ready Prototype', desc: 'Complete quadcopter with BLDC motors, 4S LiPo & Here3+ GPS' },
+      { src: 'assets/projects/nidar/nidar_quadcopter_frame_1.jpg', title: 'PID Tuning Setup', desc: 'Single-axis pitch/roll stabilization test bench' },
+      { src: 'assets/projects/nidar/nidar_quadcopter_frame_2.jpg', title: 'Motor Thrust Response', desc: '30A ESC & 4S LiPo motor dynamics testing' }
+    ],
     problem: 'Commercial drones lack the onboard intelligence required for fully autonomous missions in GPS-denied or complex environments, and standard frames fail to absorb hard landing impacts that damage electronics.',
     objective: 'Design and build a fully autonomous quadcopter combining the Pixhawk Cube Orange flight controller for precision flight stabilization with a Jetson Nano for onboard AI inference, GPS waypoint navigation, and real-time obstacle awareness.',
     role: 'Lead Mechanical & Autonomous Systems Designer',
@@ -41,6 +50,7 @@ const PROJECTS = [
     title: 'Off-Road ATV & Gokart — Telescopic Steering Mechanism',
     summary: 'Student motorsport ATV and Gokart featuring a custom adjustable telescopic steering column. National competition winner FOMBI 2K25.',
     cover: 'assets/projects/covers/atv_gokart_cover.svg',
+    image: 'assets/projects/atv/fombi_atv_frame_1.jpg',
     video: 'assets/videos/atv_fombi_2024.mp4',
     tags: ['Telescopic Steering', 'Tubular Spaceframe', 'ANSYS FEA', 'FOMBI Winners', 'Vehicle Dynamics'],
     specs: {
@@ -49,6 +59,12 @@ const PROJECTS = [
       'Competition': 'FOMBI 2K25 / 2K24',
       'Result': 'Winners + 2× Runners-Up'
     },
+    gallery: [
+      { src: 'assets/projects/atv/fombi_atv_frame_1.jpg', title: 'FOMBI National Motorsport ATV', desc: 'Tubular spaceframe chassis & suspension testing' },
+      { src: 'assets/projects/atv/fombi_atv_frame_2.jpg', title: 'Telescopic Steering Column', desc: 'Dual-splined positive locking mechanism' },
+      { src: 'assets/projects/atv/fombi_atv_frame_3.jpg', title: 'Front Suspension & Knuckle Assembly', desc: 'Double wishbone & steering geometry fabrication' },
+      { src: 'assets/projects/atv/fombi_atv_frame_4.jpg', title: 'Endurance Track Testing', desc: 'FOMBI 2K25 National Champions in action' }
+    ],
     problem: 'Standard fixed steering columns cause driver fatigue and sub-optimal control for teams with varying driver heights during endurance motorsport events.',
     objective: 'Develop an adjustable telescopic steering mechanism maintaining Ackerman geometry across full adjustment range without mechanical slop.',
     role: 'Mechanical Design & Fabrication Engineer, Team Godavari',
@@ -64,6 +80,7 @@ const PROJECTS = [
     title: 'Autonomous Wall Sander Robot — Kinematic Design',
     summary: 'Semi-autonomous wall sanding robot arm designed in Fusion 360 with full motion analysis for multi-axis reachability and surface pressure consistency.',
     cover: 'assets/projects/covers/wall_sander_cover.svg',
+    image: 'assets/projects/wall_sander/wall_sander_frame_1.jpg',
     video: 'assets/videos/wall_sander_fusion.mp4',
     tags: ['Fusion 360', 'Kinematics', 'Motion Analysis', 'Robot Design', 'Joint Torque'],
     specs: {
@@ -72,6 +89,12 @@ const PROJECTS = [
       'Drive': 'Lead Screw + Pivot Arms',
       'Analysis': 'Joint Torque & Reach Sweep'
     },
+    gallery: [
+      { src: 'assets/projects/wall_sander/wall_sander_frame_1.jpg', title: 'Fusion 360 Kinematic Assembly', desc: 'Multi-axis arm reachability sweep' },
+      { src: 'assets/projects/wall_sander/wall_sander_frame_2.jpg', title: 'Lead-Screw Elevation Drive', desc: 'Vertical motion carriage & guide rails' },
+      { src: 'assets/projects/wall_sander/wall_sander_frame_3.jpg', title: 'Joint Torque Simulation', desc: 'Dynamic counterbalancing & actuator load analysis' },
+      { src: 'assets/projects/wall_sander/wall_sander_frame_4.jpg', title: 'Sanding Head Motion Study', desc: 'End-effector trajectory on vertical wall' }
+    ],
     problem: 'Manual wall sanding generates hazardous dust and causes severe physical strain. Automation requires lightweight arms maintaining uniform contact pressure on vertical surfaces.',
     objective: 'Design a compact wall sander arm with height extension, joint counterbalancing, and smooth end-effector trajectory.',
     role: 'Robotics Kinematics & Mechanical CAD Designer',
@@ -87,6 +110,7 @@ const PROJECTS = [
     title: 'Siemens MCD — Digital Twin Simulation',
     summary: 'Physics-accurate digital twin modeling in Siemens NX & MCD: conveyor kinematics, slope dynamics, sensor-actuator logic and multi-body friction simulation.',
     cover: 'assets/projects/covers/siemens_mcd_cover.svg',
+    image: 'assets/projects/siemens_mcd/mcd_design_1_frame_1.jpg',
     video: 'assets/videos/siemens_mcd_design.mp4',
     tags: ['Siemens NX', 'Siemens MCD', 'Digital Twin', 'Mechatronics', 'Physics Simulation'],
     specs: {
@@ -95,6 +119,11 @@ const PROJECTS = [
       'Engine': 'Rigid Body Dynamic Contacts',
       'Control': 'Sensor-Driven Automation'
     },
+    gallery: [
+      { src: 'assets/projects/siemens_mcd/mcd_design_1_frame_1.jpg', title: 'Siemens MCD Conveyor Digital Twin', desc: 'Mechatronics sensor-actuator dynamic simulation' },
+      { src: 'assets/projects/siemens_mcd/mcd_slope_frame_1.jpg', title: 'Multi-Body Slope Friction Simulation', desc: 'Physics-accurate surface contact dynamics' },
+      { src: 'assets/projects/siemens_mcd/nx_sim_1_frame_1.jpg', title: 'Siemens NX Mechanism Motion', desc: 'Kinematic joint limits & collision checks' }
+    ],
     problem: 'Physical commissioning of complex automated systems leads to expensive rework and mechanical collisions if logic is not validated on a digital replica first.',
     objective: 'Build physics-accurate 3D digital twin models in Siemens MCD to simulate multi-body friction, slope dynamics, and sensor-actuator timing.',
     role: 'Mechatronics Simulation & CAD Specialist',
@@ -110,6 +139,7 @@ const PROJECTS = [
     title: 'ROS 2 & Gazebo — AMR Physics Simulation',
     summary: 'Autonomous Mobile Robot simulation in ROS 2 & Gazebo, integrated with Micro-ROS on ESP32 for hardware-in-the-loop navigation validation.',
     cover: 'assets/projects/covers/gazebo_ros_cover.svg',
+    image: 'assets/projects/gazebo_ros/gazebo_sim_1_frame_1.jpg',
     video: 'assets/videos/gazebo_ros_sim.mp4',
     tags: ['ROS 2 Humble', 'Micro-ROS', 'Gazebo', 'ESP32', 'Navigation2', 'URDF'],
     specs: {
@@ -118,6 +148,11 @@ const PROJECTS = [
       'Hardware': 'ESP32 Microcontroller',
       'Control': 'Teleop & Autonomous Nav'
     },
+    gallery: [
+      { src: 'assets/projects/gazebo_ros/gazebo_sim_1_frame_1.jpg', title: 'Gazebo Physics Simulation', desc: 'AMR 3D world physics & collision modeling' },
+      { src: 'assets/projects/gazebo_ros/gazebo_sim_2_frame_1.jpg', title: 'ROS 2 Humble Node Graph', desc: 'Telemetry, teleop & Micro-ROS agent' },
+      { src: 'assets/projects/gazebo_ros/gazebo_sim_3_frame_1.jpg', title: 'Rviz Sensor Visualization', desc: 'LiDAR pointcloud & wheel odometry mapping' }
+    ],
     problem: 'Developing autonomous navigation directly on physical robots causes crashes and slow iteration. Simulation enables safe algorithm validation.',
     objective: 'Establish Gazebo physics simulation connected via Micro-ROS to ESP32 for hardware-in-the-loop validation of wheel odometry and motor commands.',
     role: 'Robotics Software & Simulation Developer',
@@ -133,6 +168,7 @@ const PROJECTS = [
     title: '4WD RC Vehicle — Ackerman Steering & Arduino',
     summary: 'Designed and fabricated a 4WD RC vehicle with true Ackerman steering geometry for optimized cornering traction, controlled via Arduino UNO.',
     cover: 'assets/projects/covers/ackerman_rc_cover.svg',
+    image: null,
     video: null,
     tags: ['Arduino UNO', 'Ackerman Geometry', '4WD', 'Embedded C', 'Vehicle Dynamics'],
     specs: {
@@ -156,6 +192,7 @@ const PROJECTS = [
     title: 'LPG Gas Leakage Detection System',
     summary: 'Safety-critical embedded system using MQ-05 semiconductor gas sensor to detect LPG leaks and trigger instant alarm and emergency shutdown within 500ms.',
     cover: 'assets/projects/covers/lpg_detector_cover.svg',
+    image: null,
     video: null,
     tags: ['MQ-05 Sensor', 'Gas Safety', 'Arduino', 'Embedded C', 'Safety Automation'],
     specs: {
@@ -179,6 +216,7 @@ const PROJECTS = [
     title: 'Physics-Engine Robot Dynamics & Joint Force Analysis',
     summary: 'Multi-body physics simulation of dynamic joint forces, torque requirements, and link movement under variable payload for actuator sizing.',
     cover: 'assets/projects/covers/physics_sim_cover.svg',
+    image: 'assets/projects/robotics_physics/physics_sim_1_frame_1.jpg',
     video: 'assets/videos/physics_robot_sim.mp4',
     tags: ['Physics Simulation', 'Robot Dynamics', 'Joint Torque', 'Multi-Body', 'Actuator Sizing'],
     specs: {
@@ -187,6 +225,11 @@ const PROJECTS = [
       'Engine': 'Rigid-Body Physics',
       'Goal': 'Actuator Sizing'
     },
+    gallery: [
+      { src: 'assets/projects/robotics_physics/physics_sim_1_frame_1.jpg', title: 'Dynamic Joint Force Simulation', desc: 'Multi-body payload stress analysis' },
+      { src: 'assets/projects/robotics_physics/physics_sim_2_frame_1.jpg', title: 'Robot Arm Trajectory Plot', desc: 'Joint torque profiles for actuator sizing' },
+      { src: 'assets/projects/robotics_physics/physics_sim_3_frame_1.jpg', title: 'Rigid Body Collision Engine', desc: 'Dynamic impact physics validation' }
+    ],
     problem: 'Under-sizing motor actuators causes stalls and trajectory lag during heavy payload operations at full arm extension.',
     objective: 'Simulate dynamic joint torque profiles at maximum payload extensions to specify motor gearboxes with appropriate safety factors.',
     role: 'Simulation Engineer',
@@ -920,9 +963,22 @@ function openModal(id) {
     <div class="modal-section-title">Results</div>
     <p class="modal-body">${p.results}</p>
 
-    ${p.image ? `
-      <div class="modal-section-title">Project Hardware & Prototype</div>
-      <div style="width:100%; max-height:500px; overflow:hidden; border-radius:var(--radius); border:1px solid var(--graphite); margin:1.5rem 0; background:var(--black-3);">
+        ${p.gallery && p.gallery.length > 0 ? `
+      <div class="modal-section-title">Hardware Build &amp; Simulation Gallery</div>
+      <div class="modal-gallery-grid">
+        ${p.gallery.map(item => `
+          <div class="modal-gallery-card" onclick="openLightbox('${item.src}', '${item.title.replace(/'/g, "\'")}')">
+            <img src="${item.src}" alt="${item.title}" loading="lazy">
+            <div class="modal-gallery-card-info">
+              <div class="mgc-title">${item.title}</div>
+              <div class="mgc-desc">${item.desc}</div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    ` : p.image ? `
+      <div class="modal-section-title">Project Hardware &amp; Prototype</div>
+      <div style="width:100%; max-height:500px; overflow:hidden; border-radius:var(--radius); border:1px solid var(--graphite); margin:1.5rem 0; background:var(--black-3); cursor:pointer;" onclick="openLightbox('${p.image}', '${p.title.replace(/'/g, "\'")}')">
         <img src="${p.image}" alt="${p.title}" style="width:100%; height:100%; object-fit:contain; display:block;">
       </div>
     ` : ''}
