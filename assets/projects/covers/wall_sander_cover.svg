@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550" width="800" height="550" style="background:#0a0a0b">
+  <defs>
+    <pattern id="grid_wall_sander" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00c2c7" stroke-width="0.3" opacity="0.2"/>
+    </pattern>
+    <pattern id="smallgrid_wall_sander" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M 8 0 L 0 0 0 8" fill="none" stroke="#00c2c7" stroke-width="0.15" opacity="0.12"/>
+    </pattern>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="550" fill="#0a0a0b"/>
+  <!-- Fine grid -->
+  <rect width="800" height="550" fill="url(#smallgrid_wall_sander)"/>
+  <!-- Main grid -->
+  <rect width="800" height="550" fill="url(#grid_wall_sander)"/>
+  <!-- Corner markers -->
+  <g stroke="#00c2c7" stroke-width="1.5" opacity="0.8">
+    <path d="M 20 20 L 20 50"/>
+    <path d="M 20 20 L 50 20"/>
+    <path d="M 780 20 L 780 50"/>
+    <path d="M 780 20 L 750 20"/>
+    <path d="M 20 530 L 20 500"/>
+    <path d="M 20 530 L 50 530"/>
+    <path d="M 780 530 L 780 500"/>
+    <path d="M 780 530 L 750 530"/>
+  </g>
+  <!-- Category label top left -->
+  <text x="30" y="18" font-family="'JetBrains Mono', monospace" font-size="9" fill="#00c2c7" opacity="0.8" letter-spacing="2">ROBOTICS &amp; CAD</text>
+  <!-- Title label bottom left -->
+  <text x="30" y="540" font-family="'JetBrains Mono', monospace" font-size="9" fill="#00c2c7" opacity="0.6" letter-spacing="1">WALL SANDER ROBOT  MULTI-AXIS KINEMATICS</text>
+  <!-- Drawing content -->
+  
+  <!-- Base -->
+  <rect x="320" y="480" width="160" height="25" rx="4" fill="#1a1a1e" stroke="#00c2c7" stroke-width="2"/>
+  <!-- Vertical column -->
+  <rect x="388" y="200" width="24" height="280" rx="4" fill="#111113" stroke="#00c2c7" stroke-width="1.5"/>
+  <!-- Screw lines on column -->
+  <line x1="388" y1="230" x2="412" y2="230" stroke="#00c2c7" stroke-width="0.8" opacity="0.5"/>
+  <line x1="388" y1="260" x2="412" y2="260" stroke="#00c2c7" stroke-width="0.8" opacity="0.5"/>
+  <line x1="388" y1="300" x2="412" y2="300" stroke="#00c2c7" stroke-width="0.8" opacity="0.5"/>
+  <line x1="388" y1="340" x2="412" y2="340" stroke="#00c2c7" stroke-width="0.8" opacity="0.5"/>
+  <line x1="388" y1="380" x2="412" y2="380" stroke="#00c2c7" stroke-width="0.8" opacity="0.5"/>
+  <!-- Link 1 -->
+  <rect x="412" y="270" width="140" height="20" rx="6" fill="#1a1a1e" stroke="#00c2c7" stroke-width="2"/>
+  <!-- Joint 1 circle -->
+  <circle cx="412" cy="280" r="18" fill="#0a0a0b" stroke="#00c2c7" stroke-width="2"/>
+  <circle cx="412" cy="280" r="8" fill="#00c2c7" opacity="0.7"/>
+  <!-- Link 2 -->
+  <rect x="552" y="230" width="20" height="100" rx="6" fill="#1a1a1e" stroke="#00c2c7" stroke-width="2"/>
+  <!-- Joint 2 circle -->
+  <circle cx="562" cy="270" r="18" fill="#0a0a0b" stroke="#00c2c7" stroke-width="2"/>
+  <circle cx="562" cy="270" r="8" fill="#00c2c7" opacity="0.7"/>
+  <!-- Sander head -->
+  <circle cx="562" cy="195" r="40" fill="#0d0d0f" stroke="#4a9eff" stroke-width="2.5"/>
+  <circle cx="562" cy="195" r="28" fill="none" stroke="#00c2c7" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <circle cx="562" cy="195" r="12" fill="#00c2c7" opacity="0.4"/>
+  <text x="562" y="199" font-family="JetBrains Mono" font-size="8" fill="#00c2c7" text-anchor="middle">SANDER</text>
+  <!-- Wall surface -->
+  <rect x="680" y="80" width="20" height="400" fill="#1a1a1e" stroke="#00c2c7" stroke-width="1.5" opacity="0.7"/>
+  <text x="690" y="75" font-family="JetBrains Mono" font-size="8" fill="#00c2c7" text-anchor="middle">WALL</text>
+  <!-- Reach arc (faint) -->
+  <circle cx="400" cy="280" r="220" fill="none" stroke="#00c2c7" stroke-width="0.5" opacity="0.2" stroke-dasharray="5 8"/>
+  <!-- Labels -->
+  <text x="460" y="268" font-family="JetBrains Mono" font-size="8" fill="#00c2c7" opacity="0.7">LINK 1  200mm</text>
+  <text x="540" y="175" font-family="JetBrains Mono" font-size="8" fill="#4a9eff" text-anchor="middle" opacity="0.9">END EFFECTOR</text>
+  <text x="400" y="508" font-family="JetBrains Mono" font-size="8" fill="#00c2c7" text-anchor="middle" opacity="0.7">BASE UNIT</text>
+
+</svg>

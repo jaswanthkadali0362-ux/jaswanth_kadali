@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550" width="800" height="550" style="background:#0a0a0b">
+  <defs>
+    <pattern id="grid_physics_sim" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00c2c7" stroke-width="0.3" opacity="0.2"/>
+    </pattern>
+    <pattern id="smallgrid_physics_sim" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M 8 0 L 0 0 0 8" fill="none" stroke="#00c2c7" stroke-width="0.15" opacity="0.12"/>
+    </pattern>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="550" fill="#0a0a0b"/>
+  <!-- Fine grid -->
+  <rect width="800" height="550" fill="url(#smallgrid_physics_sim)"/>
+  <!-- Main grid -->
+  <rect width="800" height="550" fill="url(#grid_physics_sim)"/>
+  <!-- Corner markers -->
+  <g stroke="#00c2c7" stroke-width="1.5" opacity="0.8">
+    <path d="M 20 20 L 20 50"/>
+    <path d="M 20 20 L 50 20"/>
+    <path d="M 780 20 L 780 50"/>
+    <path d="M 780 20 L 750 20"/>
+    <path d="M 20 530 L 20 500"/>
+    <path d="M 20 530 L 50 530"/>
+    <path d="M 780 530 L 780 500"/>
+    <path d="M 780 530 L 750 530"/>
+  </g>
+  <!-- Category label top left -->
+  <text x="30" y="18" font-family="'JetBrains Mono', monospace" font-size="9" fill="#00c2c7" opacity="0.8" letter-spacing="2">CAD &amp; SIMULATION</text>
+  <!-- Title label bottom left -->
+  <text x="30" y="540" font-family="'JetBrains Mono', monospace" font-size="9" fill="#00c2c7" opacity="0.6" letter-spacing="1">PHYSICS SIMULATION  ROBOT DYNAMICS &amp; JOINT TORQUE</text>
+  <!-- Drawing content -->
+  
+  <!-- Robot arm links -->
+  <rect x="360" y="440" width="80" height="24" rx="4" fill="#1a1a1e" stroke="#00c2c7" stroke-width="2"/>
+  <text x="400" y="456" font-family="JetBrains Mono" font-size="8" fill="#00c2c7" text-anchor="middle">BASE</text>
+  <!-- Link 1 -->
+  <rect x="390" y="260" width="20" height="180" rx="6" fill="#1a1a1e" stroke="#00c2c7" stroke-width="2"/>
+  <!-- Joint 1 -->
+  <circle cx="400" cy="440" r="16" fill="#0a0a0b" stroke="#00c2c7" stroke-width="2.5"/>
+  <circle cx="400" cy="440" r="7" fill="#00c2c7"/>
+  <!-- Joint 2 -->
+  <circle cx="400" cy="260" r="16" fill="#0a0a0b" stroke="#4a9eff" stroke-width="2.5"/>
+  <circle cx="400" cy="260" r="7" fill="#4a9eff"/>
+  <!-- Link 2 angled -->
+  <line x1="400" y1="260" x2="540" y2="140" stroke="#4a9eff" stroke-width="14" stroke-linecap="round" opacity="0.7"/>
+  <!-- Joint 3 -->
+  <circle cx="540" cy="140" r="16" fill="#0a0a0b" stroke="#10b981" stroke-width="2.5"/>
+  <circle cx="540" cy="140" r="7" fill="#10b981"/>
+  <!-- End effector -->
+  <circle cx="640" cy="100" r="14" fill="#0a0a0b" stroke="#ef4444" stroke-width="2.5"/>
+  <line x1="540" y1="140" x2="640" y2="100" stroke="#10b981" stroke-width="10" stroke-linecap="round" opacity="0.7"/>
+  <!-- Torque arrows -->
+  <path d="M 390 430 A 50 50 0 0 1 410 430" stroke="#ef4444" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M 385 255 A 60 60 0 0 1 415 255" stroke="#f59e0b" stroke-width="2" fill="none" opacity="0.7"/>
+  <!-- Force annotation -->
+  <line x1="640" y1="100" x2="640" y2="60" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.7"/>
+  <text x="648" y="80" font-family="JetBrains Mono" font-size="8" fill="#ef4444">F = mg</text>
+  <!-- Torque labels -->
+  <text x="440" y="458" font-family="JetBrains Mono" font-size="8" fill="#ef4444" opacity="0.9">τ₁</text>
+  <text x="440" y="260" font-family="JetBrains Mono" font-size="8" fill="#f59e0b" opacity="0.9">τ₂</text>
+  <text x="558" y="138" font-family="JetBrains Mono" font-size="8" fill="#10b981" opacity="0.9">τ₃</text>
+  <!-- Equation block -->
+  <rect x="80" y="200" width="240" height="80" rx="4" fill="#111113" stroke="#00c2c7" stroke-width="1"/>
+  <text x="200" y="225" font-family="JetBrains Mono" font-size="9" fill="#00c2c7" text-anchor="middle">τ = J^T · F_ee</text>
+  <text x="200" y="248" font-family="JetBrains Mono" font-size="8" fill="#00c2c7" text-anchor="middle" opacity="0.6">JOINT TORQUE EQUATION</text>
+  <text x="200" y="268" font-family="JetBrains Mono" font-size="7" fill="#00c2c7" text-anchor="middle" opacity="0.4">Jacobian Transpose Method</text>
+  <!-- Title -->
+  <text x="400" y="510" font-family="JetBrains Mono" font-size="9" fill="#00c2c7" text-anchor="middle" letter-spacing="2">MULTI-BODY DYNAMICS  ACTUATOR TORQUE PROFILING</text>
+
+</svg>

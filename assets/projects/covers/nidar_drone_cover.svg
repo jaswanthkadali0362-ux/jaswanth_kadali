@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550" width="800" height="550" style="background:#0a0a0b">
+  <defs>
+    <pattern id="grid_nidar" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00c2c7" stroke-width="0.3" opacity="0.2"/>
+    </pattern>
+    <pattern id="smallgrid_nidar" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M 8 0 L 0 0 0 8" fill="none" stroke="#00c2c7" stroke-width="0.15" opacity="0.12"/>
+    </pattern>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="550" fill="#0a0a0b"/>
+  <!-- Fine grid -->
+  <rect width="800" height="550" fill="url(#smallgrid_nidar)"/>
+  <!-- Main grid -->
+  <rect width="800" height="550" fill="url(#grid_nidar)"/>
+  <!-- Corner markers -->
+  <g stroke="#00c2c7" stroke-width="1.5" opacity="0.8">
+    <path d="M 20 20 L 20 50"/>
+    <path d="M 20 20 L 50 20"/>
+    <path d="M 780 20 L 780 50"/>
+    <path d="M 780 20 L 750 20"/>
+    <path d="M 20 530 L 20 500"/>
+    <path d="M 20 530 L 50 530"/>
+    <path d="M 780 530 L 780 500"/>
+    <path d="M 780 530 L 750 530"/>
+  </g>
+  <!-- Category label top left -->
+  <text x="30" y="18" font-family="'JetBrains Mono', monospace" font-size="9" fill="#00c2c7" opacity="0.8" letter-spacing="2">DRONES &amp; UAV</text>
+  <!-- Title label bottom left -->
+  <text x="30" y="540" font-family="'JetBrains Mono', monospace" font-size="9" fill="#00c2c7" opacity="0.6" letter-spacing="1">NIDAR QUADCOPTER  ESP32 SENSOR FUSION</text>
+  <!-- Drawing content -->
+  
+  <!-- Central hub box -->
+  <rect x="350" y="235" width="100" height="80" fill="#111113" stroke="#00c2c7" stroke-width="1.5"/>
+  <text x="400" y="268" font-family="JetBrains Mono" font-size="10" fill="#00c2c7" text-anchor="middle" letter-spacing="1">FLIGHT</text>
+  <text x="400" y="282" font-family="JetBrains Mono" font-size="10" fill="#00c2c7" text-anchor="middle" letter-spacing="1">CONTROLLER</text>
+  <!-- Arms -->
+  <line x1="350" y1="235" x2="160" y2="100" stroke="#00c2c7" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+  <line x1="450" y1="235" x2="640" y2="100" stroke="#00c2c7" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+  <line x1="350" y1="315" x2="160" y2="450" stroke="#00c2c7" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+  <line x1="450" y1="315" x2="640" y2="450" stroke="#00c2c7" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+  <!-- Motor circles -->
+  <circle cx="160" cy="100" r="34" fill="#111113" stroke="#00c2c7" stroke-width="2"/>
+  <circle cx="160" cy="100" r="20" fill="none" stroke="#00c2c7" stroke-width="1" opacity="0.5"/>
+  <circle cx="640" cy="100" r="34" fill="#111113" stroke="#00c2c7" stroke-width="2"/>
+  <circle cx="640" cy="100" r="20" fill="none" stroke="#00c2c7" stroke-width="1" opacity="0.5"/>
+  <circle cx="160" cy="450" r="34" fill="#111113" stroke="#00c2c7" stroke-width="2"/>
+  <circle cx="160" cy="450" r="20" fill="none" stroke="#00c2c7" stroke-width="1" opacity="0.5"/>
+  <circle cx="640" cy="450" r="34" fill="#111113" stroke="#00c2c7" stroke-width="2"/>
+  <circle cx="640" cy="450" r="20" fill="none" stroke="#00c2c7" stroke-width="1" opacity="0.5"/>
+  <!-- Motor labels -->
+  <text x="160" y="104" font-family="JetBrains Mono" font-size="8" fill="#00c2c7" text-anchor="middle">BLDC 1</text>
+  <text x="640" y="104" font-family="JetBrains Mono" font-size="8" fill="#00c2c7" text-anchor="middle">BLDC 2</text>
+  <text x="160" y="454" font-family="JetBrains Mono" font-size="8" fill="#00c2c7" text-anchor="middle">BLDC 3</text>
+  <text x="640" y="454" font-family="JetBrains Mono" font-size="8" fill="#00c2c7" text-anchor="middle">BLDC 4</text>
+  <!-- Propeller arcs -->
+  <circle cx="160" cy="100" r="55" fill="none" stroke="#4a9eff" stroke-width="1.5" opacity="0.4" stroke-dasharray="8 4"/>
+  <circle cx="640" cy="100" r="55" fill="none" stroke="#4a9eff" stroke-width="1.5" opacity="0.4" stroke-dasharray="8 4"/>
+  <circle cx="160" cy="450" r="55" fill="none" stroke="#4a9eff" stroke-width="1.5" opacity="0.4" stroke-dasharray="8 4"/>
+  <circle cx="640" cy="450" r="55" fill="none" stroke="#4a9eff" stroke-width="1.5" opacity="0.4" stroke-dasharray="8 4"/>
+  <!-- ESP32 label -->
+  <rect x="358" y="300" width="84" height="22" fill="#1a1a1e" stroke="#00c2c7" stroke-width="0.8"/>
+  <text x="400" y="315" font-family="JetBrains Mono" font-size="8" fill="#00c2c7" text-anchor="middle" letter-spacing="1">ESP32</text>
+  <!-- Dimension lines -->
+  <line x1="160" y1="65" x2="640" y2="65" stroke="#00c2c7" stroke-width="0.6" opacity="0.5" marker-start="url(#arr)" marker-end="url(#arr)"/>
+  <text x="400" y="58" font-family="JetBrains Mono" font-size="8" fill="#00c2c7" text-anchor="middle" opacity="0.7">WHEELBASE: 450mm</text>
+
+</svg>

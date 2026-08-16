@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550" width="800" height="550" style="background:#0a0a0b">
+  <defs>
+    <pattern id="grid_lpg_detector" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00c2c7" stroke-width="0.3" opacity="0.2"/>
+    </pattern>
+    <pattern id="smallgrid_lpg_detector" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M 8 0 L 0 0 0 8" fill="none" stroke="#00c2c7" stroke-width="0.15" opacity="0.12"/>
+    </pattern>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="550" fill="#0a0a0b"/>
+  <!-- Fine grid -->
+  <rect width="800" height="550" fill="url(#smallgrid_lpg_detector)"/>
+  <!-- Main grid -->
+  <rect width="800" height="550" fill="url(#grid_lpg_detector)"/>
+  <!-- Corner markers -->
+  <g stroke="#00c2c7" stroke-width="1.5" opacity="0.8">
+    <path d="M 20 20 L 20 50"/>
+    <path d="M 20 20 L 50 20"/>
+    <path d="M 780 20 L 780 50"/>
+    <path d="M 780 20 L 750 20"/>
+    <path d="M 20 530 L 20 500"/>
+    <path d="M 20 530 L 50 530"/>
+    <path d="M 780 530 L 780 500"/>
+    <path d="M 780 530 L 750 530"/>
+  </g>
+  <!-- Category label top left -->
+  <text x="30" y="18" font-family="'JetBrains Mono', monospace" font-size="9" fill="#00c2c7" opacity="0.8" letter-spacing="2">EMBEDDED SYSTEMS</text>
+  <!-- Title label bottom left -->
+  <text x="30" y="540" font-family="'JetBrains Mono', monospace" font-size="9" fill="#00c2c7" opacity="0.6" letter-spacing="1">LPG GAS DETECTION  SAFETY AUTOMATION SYSTEM</text>
+  <!-- Drawing content -->
+  
+  <!-- MQ-05 Sensor -->
+  <circle cx="200" cy="230" r="55" fill="#0d0d0f" stroke="#00c2c7" stroke-width="3"/>
+  <circle cx="200" cy="230" r="35" fill="none" stroke="#00c2c7" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="200" cy="230" r="15" fill="#00c2c7" opacity="0.3"/>
+  <text x="200" y="210" font-family="JetBrains Mono" font-size="8" fill="#00c2c7" text-anchor="middle">MQ-05</text>
+  <text x="200" y="226" font-family="JetBrains Mono" font-size="7" fill="#00c2c7" text-anchor="middle">GAS</text>
+  <text x="200" y="240" font-family="JetBrains Mono" font-size="7" fill="#00c2c7" text-anchor="middle">SENSOR</text>
+  <!-- Signal line -->
+  <line x1="255" y1="230" x2="320" y2="230" stroke="#00c2c7" stroke-width="2" opacity="0.8"/>
+  <!-- Microcontroller -->
+  <rect x="320" y="190" width="110" height="80" rx="4" fill="#111113" stroke="#4a9eff" stroke-width="2"/>
+  <text x="375" y="228" font-family="JetBrains Mono" font-size="9" fill="#4a9eff" text-anchor="middle">ARDUINO</text>
+  <text x="375" y="245" font-family="JetBrains Mono" font-size="7" fill="#4a9eff" text-anchor="middle" opacity="0.6">THRESHOLD FILTER</text>
+  <!-- Output connections -->
+  <line x1="430" y1="210" x2="530" y2="180" stroke="#ef4444" stroke-width="1.5" opacity="0.8"/>
+  <line x1="430" y1="250" x2="530" y2="250" stroke="#10b981" stroke-width="1.5" opacity="0.8"/>
+  <line x1="430" y1="240" x2="530" y2="330" stroke="#f59e0b" stroke-width="1.5" opacity="0.8"/>
+  <!-- Alarm -->
+  <circle cx="570" cy="165" r="30" fill="#0d0d0f" stroke="#ef4444" stroke-width="2"/>
+  <text x="570" y="160" font-family="JetBrains Mono" font-size="8" fill="#ef4444" text-anchor="middle">ALARM</text>
+  <text x="570" y="175" font-family="JetBrains Mono" font-size="7" fill="#ef4444" text-anchor="middle" opacity="0.7">PIEZO</text>
+  <!-- LCD -->
+  <rect x="530" y="220" width="100" height="50" rx="3" fill="#111113" stroke="#10b981" stroke-width="1.5"/>
+  <text x="580" y="242" font-family="JetBrains Mono" font-size="7" fill="#10b981" text-anchor="middle">LCD 16×2</text>
+  <text x="580" y="258" font-family="JetBrains Mono" font-size="6" fill="#10b981" text-anchor="middle" opacity="0.7">STATUS DISPLAY</text>
+  <!-- Relay -->
+  <rect x="530" y="305" width="100" height="50" rx="3" fill="#111113" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="580" y="327" font-family="JetBrains Mono" font-size="7" fill="#f59e0b" text-anchor="middle">RELAY</text>
+  <text x="580" y="343" font-family="JetBrains Mono" font-size="6" fill="#f59e0b" text-anchor="middle" opacity="0.7">GAS CUTOFF</text>
+  <!-- Response time indicator -->
+  <text x="200" y="330" font-family="JetBrains Mono" font-size="9" fill="#00c2c7" text-anchor="middle">RESPONSE: &amp;lt;500ms</text>
+  <text x="400" y="460" font-family="JetBrains Mono" font-size="10" fill="#00c2c7" text-anchor="middle" letter-spacing="2">SAFETY-CRITICAL GAS LEAK DETECTION</text>
+
+</svg>

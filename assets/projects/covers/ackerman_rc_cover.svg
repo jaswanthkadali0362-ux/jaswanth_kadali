@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550" width="800" height="550" style="background:#0a0a0b">
+  <defs>
+    <pattern id="grid_ackerman_rc" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00c2c7" stroke-width="0.3" opacity="0.2"/>
+    </pattern>
+    <pattern id="smallgrid_ackerman_rc" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M 8 0 L 0 0 0 8" fill="none" stroke="#00c2c7" stroke-width="0.15" opacity="0.12"/>
+    </pattern>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="550" fill="#0a0a0b"/>
+  <!-- Fine grid -->
+  <rect width="800" height="550" fill="url(#smallgrid_ackerman_rc)"/>
+  <!-- Main grid -->
+  <rect width="800" height="550" fill="url(#grid_ackerman_rc)"/>
+  <!-- Corner markers -->
+  <g stroke="#00c2c7" stroke-width="1.5" opacity="0.8">
+    <path d="M 20 20 L 20 50"/>
+    <path d="M 20 20 L 50 20"/>
+    <path d="M 780 20 L 780 50"/>
+    <path d="M 780 20 L 750 20"/>
+    <path d="M 20 530 L 20 500"/>
+    <path d="M 20 530 L 50 530"/>
+    <path d="M 780 530 L 780 500"/>
+    <path d="M 780 530 L 750 530"/>
+  </g>
+  <!-- Category label top left -->
+  <text x="30" y="18" font-family="'JetBrains Mono', monospace" font-size="9" fill="#00c2c7" opacity="0.8" letter-spacing="2">EMBEDDED SYSTEMS</text>
+  <!-- Title label bottom left -->
+  <text x="30" y="540" font-family="'JetBrains Mono', monospace" font-size="9" fill="#00c2c7" opacity="0.6" letter-spacing="1">4WD RC VEHICLE  ACKERMAN STEERING GEOMETRY</text>
+  <!-- Drawing content -->
+  
+  <!-- Chassis -->
+  <rect x="260" y="160" width="280" height="230" rx="6" fill="#0d0d0f" stroke="#00c2c7" stroke-width="1.5"/>
+  <!-- Arduino block center -->
+  <rect x="340" y="220" width="120" height="80" rx="4" fill="#111113" stroke="#4a9eff" stroke-width="2"/>
+  <text x="400" y="257" font-family="JetBrains Mono" font-size="9" fill="#4a9eff" text-anchor="middle">ARDUINO</text>
+  <text x="400" y="274" font-family="JetBrains Mono" font-size="9" fill="#4a9eff" text-anchor="middle">UNO</text>
+  <!-- Motor driver -->
+  <rect x="160" y="250" width="80" height="50" rx="3" fill="#111113" stroke="#00c2c7" stroke-width="1.5"/>
+  <text x="200" y="270" font-family="JetBrains Mono" font-size="7" fill="#00c2c7" text-anchor="middle">L298N</text>
+  <text x="200" y="284" font-family="JetBrains Mono" font-size="6" fill="#00c2c7" text-anchor="middle" opacity="0.6">MOTOR DVR</text>
+  <line x1="240" y1="275" x2="340" y2="260" stroke="#00c2c7" stroke-width="1" opacity="0.5" stroke-dasharray="5 3"/>
+  <!-- RF Receiver -->
+  <rect x="560" y="250" width="80" height="50" rx="3" fill="#111113" stroke="#00c2c7" stroke-width="1.5"/>
+  <text x="600" y="270" font-family="JetBrains Mono" font-size="7" fill="#00c2c7" text-anchor="middle">RF RX</text>
+  <text x="600" y="284" font-family="JetBrains Mono" font-size="6" fill="#00c2c7" text-anchor="middle" opacity="0.6">2.4 GHz</text>
+  <line x1="560" y1="275" x2="460" y2="260" stroke="#00c2c7" stroke-width="1" opacity="0.5" stroke-dasharray="5 3"/>
+  <!-- Wheels -->
+  <rect x="200" y="155" width="35" height="60" rx="4" fill="#111113" stroke="#00c2c7" stroke-width="2"/>
+  <rect x="565" y="155" width="35" height="60" rx="4" fill="#111113" stroke="#00c2c7" stroke-width="2"/>
+  <rect x="200" y="335" width="35" height="60" rx="4" fill="#111113" stroke="#00c2c7" stroke-width="2"/>
+  <rect x="565" y="335" width="35" height="60" rx="4" fill="#111113" stroke="#00c2c7" stroke-width="2"/>
+  <!-- Steering servo -->
+  <rect x="362" y="160" width="76" height="30" rx="3" fill="#111113" stroke="#10b981" stroke-width="1.5"/>
+  <text x="400" y="180" font-family="JetBrains Mono" font-size="7" fill="#10b981" text-anchor="middle">SERVO STEER</text>
+  <!-- Ackerman linkage angles -->
+  <line x1="235" y1="185" x2="362" y2="175" stroke="#10b981" stroke-width="1.5" opacity="0.8"/>
+  <line x1="565" y1="185" x2="438" y2="175" stroke="#10b981" stroke-width="1.5" opacity="0.8"/>
+  <!-- Turn radius indicator -->
+  <circle cx="400" cy="275" r="110" fill="none" stroke="#00c2c7" stroke-width="0.7" opacity="0.15" stroke-dasharray="6 4"/>
+  <!-- Label -->
+  <text x="400" y="430" font-family="JetBrains Mono" font-size="9" fill="#00c2c7" text-anchor="middle" letter-spacing="1">ACKERMAN STEERING  TRUE ZERO TIRE SCRUB</text>
+
+</svg>

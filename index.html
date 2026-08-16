@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Jaswanth Kadali — Mechanical Engineering × Robotics × Autonomous Systems</title>
+ <meta name="description" content="Portfolio of Jaswanth Kadali — Final-Year Mechanical Engineering student at SRKR Engineering College specializing in Robotics, Drones, Autonomous Systems, CAD/CAE, and Embedded Systems.">
+ <meta name="keywords" content="Jaswanth Kadali, Mechanical Engineering, Robotics, Drones, Autonomous Systems, ROS 2, Gazebo, ESP32, Siemens NX, SOLIDWORKS, SRKR Engineering College">
+ <meta name="author" content="Jaswanth Kadali">
+ <meta property="og:title" content="Jaswanth Kadali | Engineering Portfolio">
+ <meta property="og:description" content="Mechanical Engineering × Robotics × Autonomous Systems — from CAD concept to working autonomous hardware.">
+ <meta property="og:image" content="assets/profile/jaswanth_profile_2.jpg">
+ <meta property="og:type" content="website">
+ <link rel="icon" type="image/jpeg" href="assets/profile/jaswanth_profile_2.jpg">
+ <link rel="stylesheet" href="styles.css?v=1.0.7">
+
+ <!-- Three.js -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+ <!-- GSAP + ScrollTrigger -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+ <!-- Lenis Smooth Scroll -->
+ <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+ LOADER
+══════════════════════════════════════════════════════════════════ -->
+<div id="loader">
+ <div id="loader-monogram">J<span>K</span></div>
+ <div id="loader-meta">Jaswanth Kadali<br>Mechanical Engineering</div>
+ <div id="loader-progress-bar">
+ <div id="loader-progress-fill"></div>
+ </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+ CUSTOM CURSOR
+══════════════════════════════════════════════════════════════════ -->
+<div id="cursor">
+ <div id="cursor-ring"></div>
+ <div id="cursor-dot"></div>
+ <div id="cursor-label">VIEW PROJECT</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+ NAVIGATION
+══════════════════════════════════════════════════════════════════ -->
+<nav id="navbar" aria-label="Main navigation">
+ <a href="#hero" class="nav-logo">
+ <div class="nav-logo-mark">JK</div>
+ <span>Jaswanth Kadali</span>
+ </a>
+
+ <ul class="nav-links" id="nav-links" role="list">
+ <li class="nav-mobile-header">
+ <div class="nav-logo-mark">JK</div>
+ <button class="nav-mobile-close-btn" id="mobile-close" aria-label="Close menu">✕</button>
+ </li>
+ <li><a href="#about">About</a></li>
+ <li><a href="#projects">Projects</a></li>
+ <li><a href="#skills">Skills</a></li>
+ <li><a href="#competitions">Achievements</a></li>
+ <li><a href="#certifications">Certifications</a></li>
+ <li><a href="#interests">3D Printing</a></li>
+ <li><a href="#contact">Contact</a></li>
+ <li class="nav-mobile-actions">
+ <a href="https://www.linkedin.com/in/jaswanth-kadali-a969701ba/" target="_blank" rel="noopener" class="nav-mobile-btn">LinkedIn ↗</a>
+ <a href="assets/documents/Jaswanth_Kadali_Resume.pdf" download class="nav-mobile-btn primary">Download Resume ↓</a>
+ </li>
+ </ul>
+
+ <div class="nav-ctas">
+ <a href="https://www.linkedin.com/in/jaswanth-kadali-a969701ba/" target="_blank" rel="noopener" class="nav-btn nav-btn-desktop">LinkedIn ↗</a>
+ <a href="assets/documents/Jaswanth_Kadali_Resume.pdf" download class="nav-btn primary nav-btn-desktop">Resume ↓</a>
+ <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
+ <span></span><span></span><span></span>
+ </button>
+ </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════════
+ HERO
+══════════════════════════════════════════════════════════════════ -->
+<section id="hero" aria-label="Hero section">
+ <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+ <div class="hero-content">
+ <div class="hero-tag">Final-Year Mechanical Engineering · SRKR Engineering College · Bhimavaram, India</div>
+
+ <h1 class="hero-name">
+ <span class="hero-name-line"><span class="hero-name-inner">Jaswanth</span></span>
+ <span class="hero-name-line"><span class="hero-name-inner">Kadali</span></span>
+ </h1>
+
+ <p class="hero-descriptor">
+ <em>Mechanical Engineering</em> × Robotics × <em>Autonomous Systems</em>
+ </p>
+
+ <div class="hero-bottom">
+ <div class="hero-scroll-hint">
+ <span>Scroll</span>
+ <div class="hero-scroll-line"></div>
+ </div>
+ <div class="hero-meta">
+ <span>SRKR Engineering College</span>
+ <span>CGPA 7.5 / 10.0</span>
+ <a href="#projects">View Engineering Work ↓</a>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+ MARQUEE
+══════════════════════════════════════════════════════════════════ -->
+<div id="marquee-section" aria-hidden="true">
+ <div class="marquee-track" id="marquee-track">
+ <!-- filled by JS -->
+ </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+ INTRO PHRASES
+══════════════════════════════════════════════════════════════════ -->
+<section id="intro-section" aria-label="Engineering domains">
+ <div class="intro-phrase-container">
+ <div class="intro-phrase" data-phrase="MECHANICAL ENGINEERING">
+ <span>MECHANICAL</span> <span class="accent-text">ENGINEERING</span>
+ </div>
+ <div class="intro-phrase" data-phrase="ROBOTICS">
+ ROB<span class="accent-text">O</span>TICS
+ </div>
+ <div class="intro-phrase" data-phrase="AUTONOMOUS SYSTEMS">
+ <span>AUTONOMOUS</span> SYSTEMS
+ </div>
+ <div class="intro-phrase" data-phrase="FROM DESIGN TO REALITY">
+ <span class="accent-text">DESIGN</span> → REALITY
+ </div>
+ </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+ ABOUT
+══════════════════════════════════════════════════════════════════ -->
+<section id="about" aria-label="About Jaswanth Kadali">
+ <div class="container">
+ <div class="about-grid">
+ <div class="about-left">
+ <div class="about-portrait-wrapper">
+ <img src="assets/profile/jaswanth_profile_2.jpg"
+ alt="Jaswanth Kadali — Mechanical Engineering Student"
+ loading="lazy">
+ <div class="about-portrait-overlay"></div>
+ <div class="about-portrait-label">B.Tech Mechanical Engineering · SRKR</div>
+ </div>
+ </div>
+
+ <div class="about-right">
+ <div class="section-label">About Me</div>
+ <h2 class="about-heading">
+ I don't just study engineering.<br>I build systems.
+ </h2>
+ <p class="about-body">
+ Final-year Mechanical Engineering student at <strong style="color:var(--off-white)">SRKR Engineering College</strong>, Bhimavaram, Andhra Pradesh — working across mechanical design, robotics, autonomous systems, drone engineering, and embedded hardware.
+ </p>
+ <p class="about-body">
+ My engineering workflow spans the entire stack: CAD modeling in Siemens NX &amp; SOLIDWORKS, FEA simulation in ANSYS, physics-accurate digital twins in Siemens MCD, ROS 2 autonomous navigation, Gazebo physics simulation, and embedded firmware on ESP32 &amp; Arduino. I've competed in national motorsport events, built autonomous mobile robots, designed custom quadcopter frames, and developed LPG safety systems from concept to hardware.
+ </p>
+
+ <div class="about-stats">
+ <div class="stat-item">
+ <div class="stat-number counter-anim" data-target="8">8</div>
+ <div class="stat-label">Engineering Projects</div>
+ </div>
+ <div class="stat-item">
+ <div class="stat-number counter-anim" data-target="3">3</div>
+ <div class="stat-label">Competition Podiums</div>
+ </div>
+ <div class="stat-item">
+ <div class="stat-number">7<span>.5</span></div>
+ <div class="stat-label">CGPA / 10.0</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+ HOW I BUILD — ENGINEERING PROCESS
+══════════════════════════════════════════════════════════════════ -->
+<section id="process" aria-label="Engineering process">
+ <div class="process-header">
+ <div class="section-label">Methodology</div>
+ <h2 class="process-title">How I Build</h2>
+ <p class="process-sub">An end-to-end engineering workflow — from concept to validated, working system.</p>
+ </div>
+
+ <div class="process-steps">
+ <div class="process-step">
+ <span class="process-step-num">01</span>
+ <div class="process-step-title">Concept</div>
+ <p class="process-step-desc">Problem analysis, requirements definition, system architecture, engineering specification.</p>
+ <div class="process-step-icon">💡</div>
+ </div>
+ <div class="process-step sr-delay-1">
+ <span class="process-step-num">02</span>
+ <div class="process-step-title">CAD Design</div>
+ <p class="process-step-desc">3D modeling in Siemens NX, SOLIDWORKS or Fusion 360. Assembly constraints, DFM, tolerance stack-up.</p>
+ <div class="process-step-icon">📐</div>
+ </div>
+ <div class="process-step sr-delay-2">
+ <span class="process-step-num">03</span>
+ <div class="process-step-title">Simulation</div>
+ <p class="process-step-desc">FEA structural analysis in ANSYS. Digital twin physics validation in Siemens MCD. ROS 2 / Gazebo robot simulation.</p>
+ <div class="process-step-icon">⚡</div>
+ </div>
+ <div class="process-step sr-delay-3">
+ <span class="process-step-num">04</span>
+ <div class="process-step-title">Prototype</div>
+ <p class="process-step-desc">Physical fabrication — welding, machining, 3D printing, assembly, iterative fitting.</p>
+ <div class="process-step-icon">🔧</div>
+ </div>
+ <div class="process-step">
+ <span class="process-step-num">05</span>
+ <div class="process-step-title">Electronics</div>
+ <p class="process-step-desc">Embedded system integration — ESP32, Arduino, motor drivers, sensors, power electronics.</p>
+ <div class="process-step-icon">🔌</div>
+ </div>
+ <div class="process-step sr-delay-1">
+ <span class="process-step-num">06</span>
+ <div class="process-step-title">Control</div>
+ <p class="process-step-desc">PID tuning, ROS 2 node architecture, Micro-ROS firmware, sensor fusion algorithms.</p>
+ <div class="process-step-icon">🎛️</div>
+ </div>
+ <div class="process-step sr-delay-2">
+ <span class="process-step-num">07</span>
+ <div class="process-step-title">Test</div>
+ <p class="process-step-desc">System integration testing, flight testing, endurance validation, performance logging.</p>
+ <div class="process-step-icon">🧪</div>
+ </div>
+ <div class="process-step sr-delay-3">
+ <span class="process-step-num">08</span>
+ <div class="process-step-title">Iterate</div>
+ <p class="process-step-desc">Data-driven redesign. Identify failure modes. Strengthen, optimize, repeat.</p>
+ <div class="process-step-icon">🔄</div>
+ </div>
+ </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+ FEATURED PROJECTS
+═══════════════════════════════════════════════════════════════ -->
+<section id="projects" aria-label="Engineering projects">
+ <div class="projects-header">
+ <h2 class="projects-heading">Engineering Projects</h2>
+ <span class="projects-count sr-right">08 Projects</span>
+ </div>
+
+ <div id="projects-list">
+ <!-- Rendered by script.js -->
+ </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+ DRONE SPOTLIGHT
+══════════════════════════════════════════════════════════════════ -->
+<section id="drone-section" aria-label="NIDAR Drone spotlight">
+ <div class="drone-inner">
+ <div class="drone-visual sr-left">
+ <img src="assets/projects/nidar/nidar_drone.png" alt="NIDAR Autonomous Agriculture Precision Drone with Pixhawk Cube Orange &amp; Jetson Nano" class="drone-spotlight-img" loading="lazy">
+ <div class="drone-label-overlay" aria-hidden="true">
+ <div class="drone-component-label" style="top:14%;right:6%">Pixhawk Cube Orange</div>
+ <div class="drone-component-label" style="top:34%;left:6%">Jetson Nano (AI)</div>
+ <div class="drone-component-label" style="top:62%;right:6%">Here3+ GPS Module</div>
+ <div class="drone-component-label" style="top:82%;left:6%">30A ESC + 4S LiPo</div>
+ </div>
+ </div>
+ <div class="drone-info">
+ <div class="section-label">Autonomous Drone Engineering</div>
+ <h2 class="drone-info-heading sr-delay-1">NIDAR &mdash; Autonomous Agriculture Precision Drone with Pixhawk Cube Orange &amp; Jetson Nano</h2>
+ <p class="about-body sr-delay-2">We built a fully autonomous quadcopter integrating the Pixhawk Cube Orange flight controller for triple-redundant IMU precision and ArduPilot autonomy, paired with an NVIDIA Jetson Nano onboard computer running ROS 2 for real-time computer vision, GPS waypoint navigation, and MAVLink companion communication.</p>
+ <div class="drone-spec-grid sr-delay-3">
+ <div class="drone-spec-item">
+ <div class="drone-spec-key">Flight Controller</div>
+ <div class="drone-spec-val">Pixhawk Cube Orange</div>
+ </div>
+ <div class="drone-spec-item">
+ <div class="drone-spec-key">Onboard Computer</div>
+ <div class="drone-spec-val">NVIDIA Jetson Nano</div>
+ </div>
+ <div class="drone-spec-item">
+ <div class="drone-spec-key">Autonomy Stack</div>
+ <div class="drone-spec-val">ArduPilot + ROS 2</div>
+ </div>
+ <div class="drone-spec-item">
+ <div class="drone-spec-key">Frame</div>
+ <div class="drone-spec-val">Custom Impact-Absorbing Arms</div>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+ SKILLS
+══════════════════════════════════════════════════════════════════ -->
+<section id="skills" aria-label="Technical skills">
+ <div class="skills-layout">
+ <div class="skills-header">
+ <div class="section-label">Capabilities</div>
+ <h2 class="skills-title">Technical Skills</h2>
+ </div>
+ <div class="skills-categories">
+ <div class="skill-category">
+ <div class="skill-cat-icon">⚙️</div>
+ <div class="skill-cat-name">Mechanical CAD</div>
+ <div class="skill-tools">
+ <span class="skill-tool">Siemens NX</span>
+ <span class="skill-tool">SOLIDWORKS</span>
+ <span class="skill-tool">Fusion 360</span>
+ <span class="skill-tool">Siemens MCD</span>
+ <span class="skill-tool">ANSYS FEA</span>
+ </div>
+ </div>
+ <div class="skill-category">
+ <div class="skill-cat-icon">🛸</div>
+ <div class="skill-cat-name">Drones &amp; UAV</div>
+ <div class="skill-tools">
+ <span class="skill-tool">Frame Design</span>
+ <span class="skill-tool">PID Tuning</span>
+ <span class="skill-tool">ESC Integration</span>
+ <span class="skill-tool">Sensor Fusion</span>
+ <span class="skill-tool">BINFORD Certified</span>
+ </div>
+ </div>
+ <div class="skill-category">
+ <div class="skill-cat-icon">🤖</div>
+ <div class="skill-cat-name">Robotics &amp; ROS</div>
+ <div class="skill-tools">
+ <span class="skill-tool">ROS 2 Humble</span>
+ <span class="skill-tool">Gazebo Sim</span>
+ <span class="skill-tool">Micro-ROS</span>
+ <span class="skill-tool">URDF/Xacro</span>
+ <span class="skill-tool">Navigation2</span>
+ </div>
+ </div>
+ <div class="skill-category">
+ <div class="skill-cat-icon">🔌</div>
+ <div class="skill-cat-name">Embedded Systems</div>
+ <div class="skill-tools">
+ <span class="skill-tool">ESP32</span>
+ <span class="skill-tool">Arduino</span>
+ <span class="skill-tool">C / C++</span>
+ <span class="skill-tool">PWM Control</span>
+ <span class="skill-tool">Motor Drivers</span>
+ </div>
+ </div>
+ <div class="skill-category">
+ <div class="skill-cat-icon">🏎️</div>
+ <div class="skill-cat-name">Automotive Design</div>
+ <div class="skill-tools">
+ <span class="skill-tool">Telescopic Steering</span>
+ <span class="skill-tool">Ackerman Geometry</span>
+ <span class="skill-tool">Chassis Fabrication</span>
+ <span class="skill-tool">FEA Structural</span>
+ </div>
+ </div>
+ <div class="skill-category">
+ <div class="skill-cat-icon">👁️</div>
+ <div class="skill-cat-name">Computer Vision</div>
+ <div class="skill-tools">
+ <span class="skill-tool">Deep Learning CV</span>
+ <span class="skill-tool">Object Detection</span>
+ <span class="skill-tool">MathWorks Certified</span>
+ </div>
+ </div>
+ <div class="skill-category">
+ <div class="skill-cat-icon">🖨️</div>
+ <div class="skill-cat-name">Additive Manufacturing</div>
+ <div class="skill-tools">
+ <span class="skill-tool">FDM 3D Printing</span>
+ <span class="skill-tool">PLA / PETG / ABS</span>
+ <span class="skill-tool">Rapid Prototyping</span>
+ <span class="skill-tool">Cura / PrusaSlicer</span>
+ </div>
+ </div>
+ <div class="skill-category">
+ <div class="skill-cat-icon">🧮</div>
+ <div class="skill-cat-name">Simulation &amp; Analysis</div>
+ <div class="skill-tools">
+ <span class="skill-tool">Digital Twin</span>
+ <span class="skill-tool">Physics Engine</span>
+ <span class="skill-tool">Kinematic Analysis</span>
+ <span class="skill-tool">Multi-Body Dynamics</span>
+ </div>
+ </div>
+ <div class="skill-category">
+ <div class="skill-cat-icon">🏆</div>
+ <div class="skill-cat-name">Quality &amp; Process</div>
+ <div class="skill-tools">
+ <span class="skill-tool">Six Sigma Yellow Belt</span>
+ <span class="skill-tool">LinkedIn Learning</span>
+ <span class="skill-tool">Process Improvement</span>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+ COMPETITIONS
+══════════════════════════════════════════════════════════════════ -->
+<section id="competitions" aria-label="Competition achievements">
+ <div class="competitions-layout">
+ <div class="section-label">Achievements</div>
+ <h2 class="process-title">Engineering Competitions</h2>
+
+ <div class="comp-timeline">
+ <div class="comp-item">
+ <div class="comp-year">2025</div>
+ <div class="comp-info">
+ <div class="comp-event">FOMBI 2K25 — National Off-Road ATV Championship</div>
+ <div class="comp-role">Mechanical Design &amp; Fabrication Engineer · Team Godavari</div>
+ <div class="comp-tags">
+ <span class="comp-tag">Off-Road ATV</span>
+ <span class="comp-tag">Telescopic Steering</span>
+ <span class="comp-tag">Chassis Fabrication</span>
+ </div>
+ </div>
+ <div class="comp-achievement">🥇 Winners</div>
+ </div>
+
+ <div class="comp-item">
+ <div class="comp-year">2024</div>
+ <div class="comp-info">
+ <div class="comp-event">FOMBI 2K24 — National Off-Road ATV Championship</div>
+ <div class="comp-role">Mechanical Design &amp; Fabrication Engineer · Team Godavari</div>
+ <div class="comp-tags">
+ <span class="comp-tag">ATV Design</span>
+ <span class="comp-tag">Suspension</span>
+ <span class="comp-tag">Endurance Racing</span>
+ </div>
+ </div>
+ <div class="comp-achievement">🥈 Runners-Up</div>
+ </div>
+
+ <div class="comp-item">
+ <div class="comp-year">2024</div>
+ <div class="comp-info">
+ <div class="comp-event">SRKR Gokart Championship — Season 1</div>
+ <div class="comp-role">Gokart Engineering Team · SRKR Engineering College</div>
+ <div class="comp-tags">
+ <span class="comp-tag">Gokart</span>
+ <span class="comp-tag">Ackerman Steering</span>
+ <span class="comp-tag">Vehicle Dynamics</span>
+ </div>
+ </div>
+ <div class="comp-achievement">🥈 Runners-Up</div>
+ </div>
+
+ <div class="comp-item">
+ <div class="comp-year">2024</div>
+ <div class="comp-info">
+ <div class="comp-event">NIDAR Quadcopter — Drone Engineering Project</div>
+ <div class="comp-role">Lead Mechanical &amp; Embedded Systems Designer</div>
+ <div class="comp-tags">
+ <span class="comp-tag">Custom Frame CAD</span>
+ <span class="comp-tag">ESP32 Sensor Fusion</span>
+ <span class="comp-tag">PID Flight Tuning</span>
+ </div>
+ </div>
+ <div class="comp-achievement">✅ Completed</div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+ CERTIFICATIONS & CREDENTIALS
+══════════════════════════════════════════════════════════════════ -->
+<section id="certifications" aria-label="Certifications and Engineering Credentials">
+ <div class="cert-layout">
+ <div class="cert-header-wrap">
+ <div class="section-label">Verified Credentials</div>
+ <h2 class="process-title">Certifications &amp;<br><span style="color:var(--accent)">Verified Skills</span></h2>
+ <p class="cert-sub">Official engineering certifications across CAD/CAE, Robotics, Autonomous Systems, AI &amp; Computer Vision, and Six Sigma Quality Control.</p>
+ </div>
+
+ <!-- Category Filter Tabs -->
+ <div class="cert-filters sr-delay-3" role="tablist" aria-label="Certificate categories">
+ <button class="cert-filter-btn active" data-filter="all">All Credentials (11)</button>
+ <button class="cert-filter-btn" data-filter="CAD & Simulation">CAD &amp; Simulation</button>
+ <button class="cert-filter-btn" data-filter="Robotics & Autonomous">Robotics &amp; ROS</button>
+ <button class="cert-filter-btn" data-filter="AI & Computer Vision">AI &amp; Computer Vision</button>
+ <button class="cert-filter-btn" data-filter="Drones & Embedded">Drones &amp; Embedded</button>
+ <button class="cert-filter-btn" data-filter="Quality & Operations">Quality &amp; Six Sigma</button>
+ </div>
+
+ <div id="certifications-grid" class="cert-grid">
+ <!-- Injected dynamically by script.js -->
+ </div>
+ </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+ INTERESTS / 3D PRINTING
+══════════════════════════════════════════════════════════════════ -->
+<section id="interests" aria-label="3D printing and personal interests">
+ <div class="interests-layout">
+ <div class="section-label">Personal Engineering</div>
+ <h2 class="process-title sr-delay-1">3D Printing Workshop</h2>
+ <p class="about-body sr-delay-2" style="max-width:600px;margin-top:1rem;margin-bottom:0">
+ FDM additive manufacturing as a creative engineering practice — fabricating custom drone motor mounts, robot structural brackets, sensor enclosures, and gear assemblies using PLA, PETG, ABS, and TPU.
+ </p>
+ <div class="interests-grid" id="interests-grid">
+ <!-- Rendered by script.js -->
+ </div>
+ </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+ CONTACT
+══════════════════════════════════════════════════════════════════ -->
+<section id="contact" aria-label="Contact Jaswanth Kadali">
+ <div class="contact-bg-text" aria-hidden="true">CONTACT</div>
+ <div class="contact-inner">
+ <div class="section-label">Let's Connect</div>
+ <h2 class="contact-heading sr-delay-1">
+ Let's build<br>something <span>real.</span>
+ </h2>
+ <p class="about-body sr-delay-2" style="margin-bottom:3rem;max-width:500px">
+ Open to internships, collaborative engineering projects, robotics research opportunities, and anything that involves building real systems.
+ </p>
+ <div class="contact-links sr-delay-3">
+ <a href="mailto:jaswanthkadali0362@gmail.com" class="contact-link primary">
+ 📧 jaswanthkadali0362@gmail.com
+ </a>
+ <a href="https://www.linkedin.com/in/jaswanth-kadali-a969701ba/" target="_blank" rel="noopener" class="contact-link">
+ LinkedIn ↗
+ </a>
+ <a href="assets/documents/Jaswanth_Kadali_Resume.pdf" download class="contact-link">
+ Download Resume ↓
+ </a>
+ </div>
+ </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+ FOOTER
+══════════════════════════════════════════════════════════════════ -->
+<footer id="footer">
+ <div class="footer-name">Jaswanth Kadali</div>
+ <div class="footer-domains">
+ <span>Mechanical Engineering</span>
+ <span>Robotics</span>
+ <span>Drones</span>
+ <span>Autonomous Systems</span>
+ </div>
+ <div class="footer-right">
+ <a href="https://www.linkedin.com/in/jaswanth-kadali-a969701ba/" target="_blank" rel="noopener">LinkedIn</a>
+ <a href="mailto:jaswanthkadali0362@gmail.com">Email</a>
+ <span>© 2025</span>
+ </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════════
+ CASE STUDY MODAL
+══════════════════════════════════════════════════════════════════ -->
+<div id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" onclick="if(event.target===this)closeModal()">
+ <div id="modal-panel">
+ <div id="modal-header-bar">
+ <span class="modal-header-title">Project Case Study</span>
+ <button id="modal-close" onclick="closeModal()" aria-label="Close case study">
+ <span>✕</span>
+ <span>CLOSE</span>
+ </button>
+ </div>
+ <div id="modal-content"><!-- Filled by JS --></div>
+ </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+ LIGHTBOX
+══════════════════════════════════════════════════════════════════ -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" onclick="if(event.target===this)closeLightbox()">
+ <button id="lightbox-close" onclick="closeLightbox()" aria-label="Close image viewer">✕</button>
+ <img id="lightbox-img" src="" alt="">
+</div>
+
+<script src="script.js?v=1.0.7"></script>
+</body>
+</html>
