@@ -1,21 +1,21 @@
-# Video backups & Raw CAD / Simulation Source Files (Not needed for live web portfolio)
-assets/videos_backup/
+# Video backups & Raw CAD / Simulation Source Files (Only root-level source directories)
+/assets/videos_backup/
 *.docx
 *.zip
-extracted_cert_images/
-certificates -*/
-Robotics & Physics Simulation-*/
-gazebo and ros simulations/
-siemens mcd/
-wall sander robot design and motion analysis/
-nidar/
-3d printing/
-scratch/
-fombi 2024.mp4
-profile pic 2.jpeg
-profile pic.jpeg
-nidar drone.png
-jaswanth.k resume.pdf
+/extracted_cert_images/
+/certificates -*/
+/Robotics & Physics Simulation-*/
+/gazebo and ros simulations/
+/siemens mcd/
+/wall sander robot design and motion analysis/
+/nidar/
+/3d printing/
+/scratch/
+/fombi 2024.mp4
+/profile pic 2.jpeg
+/profile pic.jpeg
+/nidar drone.png
+/jaswanth.k resume.pdf
 
 # Helper scripts
 *.py
