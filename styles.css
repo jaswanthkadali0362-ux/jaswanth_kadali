@@ -2688,3 +2688,286 @@ section { position: relative; }
 }
 
 
+/* ─── THEME PALETTES ─── */
+[data-theme="purple"] {
+  --accent: #a855f7;
+  --accent-rgb: 168, 85, 247;
+  --accent-glow: rgba(168, 85, 247, 0.45);
+}
+
+[data-theme="green"] {
+  --accent: #10b981;
+  --accent-rgb: 16, 185, 129;
+  --accent-glow: rgba(16, 185, 129, 0.45);
+}
+
+[data-theme="amber"] {
+  --accent: #f59e0b;
+  --accent-rgb: 245, 158, 11;
+  --accent-glow: rgba(245, 158, 11, 0.45);
+}
+
+[data-theme="rose"] {
+  --accent: #f43f5e;
+  --accent-rgb: 244, 63, 94;
+  --accent-glow: rgba(244, 63, 94, 0.45);
+}
+
+/* ─── 3D CARD TILT & SPECULAR SHIMMER ─── */
+.card-tilt {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1), border-color 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.card-tilt::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: radial-gradient(350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(var(--accent-rgb), 0.3), transparent 45%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s;
+  z-index: 1;
+}
+
+.card-tilt:hover::after {
+  opacity: 1;
+}
+
+/* ─── LIVE TELEMETRY HUD ─── */
+.live-telemetry {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 90;
+  background: rgba(8, 10, 18, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(var(--accent-rgb), 0.35);
+  border-radius: 99px;
+  padding: 0.4rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--muted-2);
+  letter-spacing: 0.08em;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(var(--accent-rgb), 0.15);
+  pointer-events: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.telemetry-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.telemetry-val {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.telemetry-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(0.85); opacity: 0.6; }
+  50% { transform: scale(1.25); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .telemetry-desktop-only { display: none; }
+  .live-telemetry { bottom: 1rem; left: 1rem; gap: 0.75rem; padding: 0.35rem 0.75rem; font-size: 0.6rem; }
+}
+
+/* ─── THEME PALETTE SWITCHER ─── */
+.theme-switch-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(10, 12, 20, 0.85);
+  border: 1px solid var(--graphite);
+  padding: 0.3rem 0.5rem;
+  border-radius: 99px;
+  backdrop-filter: blur(10px);
+}
+
+.theme-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.theme-dot:hover {
+  transform: scale(1.25);
+}
+
+.theme-dot.active {
+  border-color: #ffffff;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px currentColor;
+}
+
+.theme-dot[data-theme-val="cyan"] { background: #00c2c7; color: #00c2c7; }
+.theme-dot[data-theme-val="purple"] { background: #a855f7; color: #a855f7; }
+.theme-dot[data-theme-val="green"] { background: #10b981; color: #10b981; }
+.theme-dot[data-theme-val="amber"] { background: #f59e0b; color: #f59e0b; }
+.theme-dot[data-theme-val="rose"] { background: #f43f5e; color: #f43f5e; }
+
+/* ─── CLI TERMINAL BUTTON & MODAL ─── */
+.cli-trigger-btn {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: rgba(12, 16, 28, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(var(--accent-rgb), 0.35);
+  color: var(--accent);
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.25s ease;
+}
+
+.cli-trigger-btn:hover {
+  background: rgba(var(--accent-rgb), 0.2);
+  border-color: var(--accent);
+  box-shadow: 0 0 20px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+#terminal-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 6, 12, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#terminal-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.terminal-box {
+  width: 100%;
+  max-width: 680px;
+  background: #070913;
+  border: 1px solid rgba(var(--accent-rgb), 0.4);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9), 0 0 50px rgba(var(--accent-rgb), 0.2);
+  font-family: var(--font-mono);
+}
+
+.terminal-header {
+  background: #0e1222;
+  padding: 0.65rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.terminal-title {
+  font-size: 0.72rem;
+  color: var(--muted-2);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.terminal-title::before {
+  content: '● ● ●';
+  color: #ef4444;
+  letter-spacing: 0.2em;
+  font-size: 0.6rem;
+}
+
+.terminal-close {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.terminal-close:hover {
+  color: var(--white);
+}
+
+.terminal-body {
+  padding: 1.25rem;
+  max-height: 380px;
+  overflow-y: auto;
+  color: #e2e8f0;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.terminal-output {
+  margin-bottom: 1rem;
+}
+
+.terminal-prompt-line {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.terminal-prompt-symbol {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+/* ─── DIGITAL MATRIX RAIN CANVAS ─── */
+#matrix-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#matrix-canvas.active {
+  opacity: 0.35;
+}
