@@ -17,7 +17,7 @@ const PROJECTS = [
     summary: 'Built a fully autonomous quadcopter using Pixhawk Cube Orange flight controller and Jetson Nano onboard computer, featuring custom impact-absorbing arm geometry, GPS waypoint navigation, and real-time computer vision.',
     cover: 'assets/projects/covers/nidar_drone_cover.svg',
     image: 'assets/projects/nidar/nidar_agri_drone.jpg',
-    video: 'assets/videos/nidar_quadcopter_tuning.mp4',
+    video: null,
     tags: ['Pixhawk Cube Orange', 'Jetson Nano', 'Autonomous Flight', 'Computer Vision', 'ROS 2'],
     specs: {
       'Flight Controller': 'Pixhawk Cube Orange',
