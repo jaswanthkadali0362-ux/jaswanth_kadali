@@ -16,7 +16,7 @@ const PROJECTS = [
     title: 'NIDAR — Autonomous Agriculture Precision Drone',
     summary: 'Built a fully autonomous quadcopter using Pixhawk Cube Orange flight controller and Jetson Nano onboard computer, featuring custom impact-absorbing arm geometry, GPS waypoint navigation, and real-time computer vision.',
     cover: 'assets/projects/covers/nidar_drone_cover.svg',
-    image: 'assets/projects/nidar/nidar_main.jpg',
+    image: 'assets/projects/nidar/nidar_agri_drone.jpg',
     video: 'assets/videos/nidar_quadcopter_tuning.mp4',
     tags: ['Pixhawk Cube Orange', 'Jetson Nano', 'Autonomous Flight', 'Computer Vision', 'ROS 2'],
     specs: {
@@ -25,13 +25,13 @@ const PROJECTS = [
       'Autonomy Stack': 'ArduPilot + ROS 2',
       'Frame': 'Custom Impact-Absorbing Arms'
     },
-    gallery: [
-      { src: 'assets/projects/nidar/nidar_main.jpg', title: 'Assembled NIDAR Drone Frame', desc: 'Custom impact-absorbing carbon fiber arm assembly & landing struts' },
+        gallery: [
+      { src: 'assets/projects/nidar/nidar_agri_drone.jpg', title: 'NIDAR Agriculture Drone & Quadcopter', desc: 'Precision agriculture sprayer drone with companion test quadcopter' },
+      { src: 'assets/projects/nidar/nidar_team_noida.jpg', title: 'NIDAR National Challenge Team (Greater Noida)', desc: 'National Innovation Challenge for Drone Application and Research' },
+      { src: 'assets/projects/nidar/nidar_drone.png', title: 'NIDAR 3D CAD Schematic & Avionics', desc: 'Pixhawk Cube Orange, Jetson Nano, Here3+ GPS & 30A ESC architecture' },
       { src: 'assets/projects/nidar/nidar_photo_1.jpg', title: 'Pixhawk Cube Orange Avionics', desc: 'Triple-redundant IMU mounting, vibration dampening & power distribution' },
-      { src: 'assets/projects/nidar/nidar_photo_2.jpg', title: 'NVIDIA Jetson Nano Setup', desc: 'ROS 2 edge intelligence for real-time computer vision & telemetry' },
-      { src: 'assets/projects/nidar/nidar_photo_3.jpg', title: 'Test Bench Assembly', desc: 'Quadcopter frame rigidity & arm structural validation' },
-      { src: 'assets/projects/nidar/nidar_photo_4.jpg', title: 'Flight-Ready Prototype', desc: 'Complete quadcopter with BLDC motors, 4S LiPo & Here3+ GPS' },
-      { src: 'assets/projects/nidar/nidar_quadcopter_frame_1.jpg', title: 'PID Tuning Setup', desc: 'Single-axis pitch/roll stabilization test bench' },
+      { src: 'assets/projects/nidar/nidar_photo_2.jpg', title: 'NVIDIA Jetson Nano AI Setup', desc: 'ROS 2 edge intelligence for real-time computer vision & telemetry' },
+      { src: 'assets/projects/nidar/nidar_quadcopter_frame_1.jpg', title: 'PID Flight Tuning Rig', desc: 'Single-axis pitch/roll stabilization test bench' },
       { src: 'assets/projects/nidar/nidar_quadcopter_frame_2.jpg', title: 'Motor Thrust Response', desc: '30A ESC & 4S LiPo motor dynamics testing' }
     ],
     problem: 'Commercial drones lack the onboard intelligence required for fully autonomous missions in GPS-denied or complex environments, and standard frames fail to absorb hard landing impacts that damage electronics.',
