@@ -254,6 +254,26 @@ const INTERESTS_PHOTOS = [
 
 const CERTIFICATES = [
   {
+    id: 'nidar-dfi-cert',
+    title: 'NIDAR — National Innovation Challenge for Drone Application & Research (PR1 Final Mission)',
+    issuer: 'Drone Federation of India (DFI) × MeitY × Gautam Buddha University',
+    category: 'Drones & Embedded',
+    date: '2026',
+    skills: ['Autonomous UAV', 'PR1 Final Mission', 'DFI Certification', 'Precision Agriculture', 'MeitY'],
+    thumb: 'assets/certificates/previews/Jaswanth_Kadali_NIDAR_DFI_Final_Mission_thumb.jpg',
+    pdf: 'assets/certificates/Jaswanth_Kadali_NIDAR_DFI_Final_Mission.jpg'
+  },
+  {
+    id: 'iisc-air-taxi-drone',
+    title: 'Advanced Drone Technology (Air Taxi) Workshop Certification',
+    issuer: 'Bharat Space Education Research Centre × IISc Bengaluru (I-STEM CeNSE)',
+    category: 'Drones & Embedded',
+    date: 'Jul 2025',
+    skills: ['Air Taxi UAV Tech', 'IISc Bengaluru', 'Aerospace Dynamics', 'I-STEM CeNSE', 'Drone Avionics'],
+    thumb: 'assets/certificates/previews/Jaswanth_Kadali_IISc_Advanced_Drone_Workshop_thumb.jpg',
+    pdf: 'assets/certificates/Jaswanth_Kadali_IISc_Advanced_Drone_Workshop.pdf'
+  },
+  {
     id: 'ros2-amr',
     title: '45-Day Autonomous Mobile Robot (AMR) & ROS 2 Training',
     issuer: 'AMR Robotics Training Institute',
@@ -262,6 +282,26 @@ const CERTIFICATES = [
     skills: ['ROS 2 Humble', 'Gazebo Sim', 'Micro-ROS', 'URDF Kinematics', 'Nav2 Stack'],
     thumb: 'assets/certificates/previews/Jaswanth_Kadali_ROS2_AMR_Training_thumb.jpg',
     pdf: 'assets/certificates/Jaswanth_Kadali_ROS2_AMR_Training.pdf'
+  },
+  {
+    id: 'agkc-motorsport-2025',
+    title: 'AGKC 2025 Season II — National Level Go Karting Championship',
+    issuer: 'AITAM × SmartBridge × Institution's Innovation Council',
+    category: 'Motorsports & UAV',
+    date: 'Mar 2025',
+    skills: ['Motorsport Engineering', 'Go-Kart Chassis Dynamics', 'Track Endurance', 'Vehicle Fabrication'],
+    thumb: 'assets/certificates/previews/Jaswanth_Kadali_AGKC_2025_Motorsport_GoKart_thumb.jpg',
+    pdf: 'assets/certificates/Jaswanth_Kadali_AGKC_2025_Motorsport_GoKart.pdf'
+  },
+  {
+    id: 'srkr-gokart-2025',
+    title: 'SRKR Go-Kart Championship 2025 — Team Markandeya',
+    issuer: 'SRKR Engineering College (A)',
+    category: 'Motorsports & UAV',
+    date: 'Jan 2025',
+    skills: ['Team Markandeya', 'Go-Kart Chassis Dynamics', 'Steering Geometry', 'Mechanical Fabrication'],
+    thumb: 'assets/certificates/previews/Jaswanth_Kadali_SRKR_GoKart_Championship_2025_thumb.jpg',
+    pdf: 'assets/certificates/Jaswanth_Kadali_SRKR_GoKart_Championship_2025.pdf'
   },
   {
     id: 'siemens-nx-mastery',
@@ -292,6 +332,16 @@ const CERTIFICATES = [
     skills: ['SOLIDWORKS', 'Complex Surfaces', 'Reference Planes', 'Mechanical Modeling'],
     thumb: 'assets/certificates/previews/Jaswanth_Kadali_SOLIDWORKS_Advanced_thumb.jpg',
     pdf: 'assets/certificates/Jaswanth_Kadali_SOLIDWORKS_Advanced.pdf'
+  },
+  {
+    id: 'linkedin-reverse-eng',
+    title: 'Reverse Engineering Foundations: Product Design',
+    issuer: 'LinkedIn Learning',
+    category: 'CAD & Simulation',
+    date: 'Jul 2026',
+    skills: ['Reverse Engineering', 'Product Design', '3D CAD Reconstruction', 'DFM Principles'],
+    thumb: 'assets/certificates/previews/Jaswanth_Kadali_LinkedIn_Reverse_Engineering_thumb.jpg',
+    pdf: 'assets/certificates/Jaswanth_Kadali_LinkedIn_Reverse_Engineering.jpg'
   },
   {
     id: 'mathworks-adv-cv',
