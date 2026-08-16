@@ -1795,22 +1795,36 @@ section { position: relative; }
   position: fixed;
   inset: 0;
   z-index: 9000;
-  background: rgba(10,10,11,0.97);
+  background: rgba(8, 8, 10, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s;
+  transition: opacity 0.4s var(--ease-out-expo), visibility 0.4s var(--ease-out-expo);
+  visibility: hidden;
 }
 
-#lightbox.open { opacity: 1; pointer-events: auto; }
+#lightbox.open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
 
 #lightbox img {
   max-width: 90vw;
   max-height: 90vh;
   object-fit: contain;
   border-radius: var(--radius);
+  transform: scale(0.92);
+  transition: transform 0.4s var(--ease-out-expo);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.85);
+}
+
+#lightbox.open img {
+  transform: scale(1);
 }
 
 #lightbox-close {
