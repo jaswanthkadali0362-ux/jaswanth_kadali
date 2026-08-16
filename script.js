@@ -27,7 +27,7 @@ const PROJECTS = [
     },
         gallery: [
       { src: 'assets/projects/nidar/nidar_agri_drone.jpg', title: 'NIDAR Agriculture Drone & Quadcopter', desc: 'Precision agriculture sprayer drone with companion test quadcopter' },
-      { src: 'assets/projects/nidar/nidar_team_noida.jpg', title: 'NIDAR National Challenge Team (Greater Noida)', desc: 'National Innovation Challenge for Drone Application and Research' },
+      { src: 'assets/projects/nidar/nidar_team_noida.jpg?v=3.0.0', title: 'NIDAR National Challenge Team (Greater Noida)', desc: 'National Innovation Challenge for Drone Application and Research' },
       { src: 'assets/projects/nidar/nidar_drone.png', title: 'NIDAR 3D CAD Schematic & Avionics', desc: 'Pixhawk Cube Orange, Jetson Nano, Here3+ GPS & 30A ESC architecture' },
       { src: 'assets/projects/nidar/nidar_photo_1.jpg', title: 'Pixhawk Cube Orange Avionics', desc: 'Triple-redundant IMU mounting, vibration dampening & power distribution' },
       { src: 'assets/projects/nidar/nidar_photo_2.jpg', title: 'NVIDIA Jetson Nano AI Setup', desc: 'ROS 2 edge intelligence for real-time computer vision & telemetry' },
