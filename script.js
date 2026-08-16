@@ -472,48 +472,34 @@ function initLoader() {
 
   // Animate progress bar
   if (fill) {
-    setTimeout(() => { fill.style.width = '60%'; }, 80);
-    setTimeout(() => { fill.style.width = '100%'; }, 600);
+    setTimeout(() => { fill.style.width = '70%'; }, 50);
+    setTimeout(() => { fill.style.width = '100%'; }, 300);
   }
 
   const dismiss = () => {
     if (loader.dataset.dismissed) return;
     loader.dataset.dismissed = 'true';
-    if (window.gsap) {
-      gsap.to(loader, {
-        opacity: 0,
-        duration: 0.5,
-        ease: 'power2.inOut',
-        onComplete: () => {
-          loader.style.display = 'none';
-          document.body.classList.add('loaded');
-          if (typeof animateHeroEntrance === 'function') animateHeroEntrance();
-        }
-      });
-    } else {
+    loader.style.opacity = '0';
+    loader.style.pointerEvents = 'none';
+    setTimeout(() => {
       loader.style.display = 'none';
       document.body.classList.add('loaded');
       if (typeof animateHeroEntrance === 'function') animateHeroEntrance();
-    }
+    }, 400);
   };
 
-  setTimeout(dismiss, 1200);
-  // Emergency fallback
-  setTimeout(dismiss, 2500);
+  setTimeout(dismiss, 500);
+  setTimeout(dismiss, 1000);
 
-  // Emergency safety override: make sure everything is visible if animations get stuck or CDNs fail
+  // Safety fallback: make sure everything is visible
   setTimeout(() => {
-    document.querySelectorAll('.sr').forEach(el => {
-      el.classList.add('visible');
-    });
-    document.querySelectorAll('.hero-name-inner').forEach(el => {
-      el.style.transform = 'none';
-    });
+    document.querySelectorAll('.sr').forEach(el => el.classList.add('visible'));
+    document.querySelectorAll('.hero-name-inner').forEach(el => el.style.transform = 'none');
     document.querySelectorAll('.hero-tag, .hero-descriptor, .hero-bottom').forEach(el => {
       el.style.opacity = '1';
       el.style.transform = 'none';
     });
-  }, 3200);
+  }, 1200);
 }
 
 /* ——————————————————————————————————————————————————————————————
