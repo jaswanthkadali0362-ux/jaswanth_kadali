@@ -269,7 +269,7 @@ const PROJECTS = [
     summary: 'Multi-body physics simulation of dynamic joint forces, torque requirements, and link movement under variable payload for actuator sizing.',
     cover: 'assets/projects/covers/physics_sim_cover.svg',
     image: 'assets/projects/robotics_physics/physics_sim_1_frame_1.jpg',
-    video: null,
+    video: 'assets/videos/physics_robot_sim.mp4',
     tags: ['Physics Simulation', 'Robot Dynamics', 'Joint Torque', 'Multi-Body', 'Actuator Sizing'],
     specs: {
       'Domain': 'Multi-Body Dynamics',
@@ -278,9 +278,9 @@ const PROJECTS = [
       'Goal': 'Actuator Sizing'
     },
     gallery: [
-      { src: 'assets/projects/robotics_physics/physics_sim_1_frame_1.jpg', title: 'Dynamic Joint Force Simulation', desc: 'Multi-body payload stress analysis' },
-      { src: 'assets/projects/robotics_physics/physics_sim_2_frame_1.jpg', title: 'Robot Arm Trajectory Plot', desc: 'Joint torque profiles for actuator sizing' },
-      { src: 'assets/projects/robotics_physics/physics_sim_3_frame_1.jpg', title: 'Rigid Body Collision Engine', desc: 'Dynamic impact physics validation' }
+      { src: 'assets/projects/robotics_physics/physics_sim_1_frame_1.jpg', title: 'Dynamic Pick & Place Architecture', desc: 'Siemens MCD articulated robotic manipulator and transfer conveyor layout' },
+      { src: 'assets/projects/robotics_physics/physics_sim_2_frame_1.jpg', title: 'Kinematic Payload Grip & Trajectory', desc: 'End-effector dynamic gripping and multi-axis joint trajectory tracking' },
+      { src: 'assets/projects/robotics_physics/physics_sim_3_frame_1.jpg', title: 'Rigid Body Collision & Contact Transfer', desc: 'Physics-accurate sequential block sorting and linear transfer mechanism' }
     ],
     problem: 'Under-sizing motor actuators causes stalls and trajectory lag during heavy payload operations at full arm extension.',
     objective: 'Simulate dynamic joint torque profiles at maximum payload extensions to specify motor gearboxes with appropriate safety factors.',
