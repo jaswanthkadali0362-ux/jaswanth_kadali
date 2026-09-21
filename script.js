@@ -289,6 +289,41 @@ const PROJECTS = [
     hardware: 'Virtual joint actuators, force/torque sensors.',
     software: 'Physics simulation environment, kinematic solvers.',
     results: 'Exact motor gearbox torque specifications determined for continuous duty cycle without thermal overload.'
+  },
+  {
+    id: 'boeing-747-cfd',
+    num: '09',
+    category: 'Aerospace & CFD',
+    title: 'Design and Fluid Flow Analysis of Boeing 747 Aircraft',
+    summary: 'Full CAD modeling of Boeing 747 airframe in SOLIDWORKS, aerodynamic CFD simulation in ANSYS Fluent at cruise (V = 265.5 m/s, 12,192 m altitude) to evaluate drag and surface pressure, followed by comparative multi-material FEA structural wing analysis across Aluminium, Titanium, Steel, and Carbon Fiber.',
+    cover: 'assets/projects/covers/boeing_747_cover.svg',
+    image: 'assets/projects/boeing_747/boeing_747_pressure_contours.jpg',
+    video: null,
+    tags: ['SOLIDWORKS CAD', 'ANSYS Fluent', 'CFD Aerodynamics', 'FEA Structural', 'Carbon Fiber Composite', 'Aerospace Engineering'],
+    specs: {
+      'CAD Architecture': 'Fuselage, Tapered Swept Wings (AR ≈ 16.18), Tailplane',
+      'CFD Solver': 'ANSYS Fluent (Realizable k–ε)',
+      'Cruise Condition': 'V = 265.5 m/s @ 12,192 m Altitude',
+      'Surface Pressure': '-54.5 kPa to +41.6 kPa',
+      'FEA Optimization': 'Multi-Material Cantilever Wing (Al, Ti, Steel, CFRP)',
+      'Technical Report': '<a href="assets/documents/Jaswanth_Boeing747_CFD_Analysis.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--accent);font-weight:600;text-decoration:underline;">Official 14-Page Technical PDF ↗</a>'
+    },
+    gallery: [
+      { src: 'assets/projects/boeing_747/boeing_747_cad_assembly.jpg', title: 'SOLIDWORKS Full Aircraft Assembly', desc: 'Underside CAD view showing wing root mating slots, fuselage geometry, and empennage (70.67m length, 22.17m tailplane)' },
+      { src: 'assets/projects/boeing_747/boeing_747_pressure_contours.jpg', title: 'ANSYS Fluent Static Pressure Contours', desc: 'Pressure distribution over Boeing 747 airframe at cruise (Min -54.5 kPa, Max +41.6 kPa)' },
+      { src: 'assets/projects/boeing_747/boeing_747_velocity_streamlines.jpg', title: '3D Aerodynamic Velocity Streamlines', desc: 'Fluid flow vectors showing airflow acceleration up to 354.5 m/s around fuselage and wings' },
+      { src: 'assets/projects/boeing_747/boeing_747_cfd_convergence.jpg', title: 'Scaled Residuals & Drag Monitor', desc: 'Continuity, velocity, k, and epsilon residual convergence history in Fluent' },
+      { src: 'assets/projects/boeing_747/boeing_747_fea_al6061.jpg', title: 'FEA Stress & Factor of Safety — Aluminium 6061-T6', desc: 'Cantilever wing structural load: 5.46 mm deformation, 40.51 MPa max stress, SF 6.81' },
+      { src: 'assets/projects/boeing_747/boeing_747_fea_titanium.jpg', title: 'FEA Equivalent von-Mises Stress — Titanium (Ti-6Al-4V)', desc: 'High-strength metallic candidate: 3.30 mm deformation, 40.81 MPa stress, SF 15 (capped)' },
+      { src: 'assets/projects/boeing_747/boeing_747_fea_carbon_fiber.jpg', title: 'FEA Structural Analysis — Carbon Fiber UD Composite', desc: 'Best candidate by strength-to-weight: 375.0 kJ/kg specific strength (3.5× higher than Aluminium)' }
+    ],
+    problem: 'Commercial wide-body aircraft like the Boeing 747 experience extreme aerodynamic drag, localized high/low pressure differentials, and immense cantilever bending moments on wing roots during high-altitude cruise flight (Mach 0.8+). Designing the airframe and selecting structural materials requires validating aerodynamic performance in CFD and balancing wing rigidity against total aircraft structural weight.',
+    objective: 'Execute an end-to-end Design-Analyse engineering workflow: (1) Model the Boeing 747 fuselage, swept tapered wings (aspect ratio ≈ 16.18), and stabilizers in SOLIDWORKS; (2) Perform an aerodynamic CFD simulation in ANSYS Fluent to resolve static pressure distribution, velocity streamlines, and lift/drag forces; (3) Map aerodynamic cruise pressure loads onto the wing structure for comparative FEA structural analysis across four materials to determine the optimal strength-to-weight selection.',
+    role: 'Aerospace CAD & CFD / FEA Structural Analyst (Skyline Space Project Trainee)',
+    mechanical: 'Parametric CAD modeling in SOLIDWORKS based on Boeing 747 dimensions (70.67m length, 19.41m height, 22.17m tailplane span). Swept, tapered wing planform engineered with aspect ratio ≈ 16.18 and precision root mating slots for fuselage assembly. Finite Element cantilever wing boundary conditions fixed at fuselage root interface.',
+    hardware: 'Computational Fluid Dynamics workstation, ANSYS Fluent / CFD-Post solver environment, ANSYS Static Structural workbench.',
+    software: 'SOLIDWORKS CAD, ANSYS Fluent (Realizable k–ε turbulence model, pressure-based solver), ANSYS CFD-Post, ANSYS Mechanical / Static Structural FEA.',
+    results: 'CFD simulation resolved static surface pressure ranging from -54,558.9 Pa to +41,650.9 Pa and peak flow velocities of 354.5 m/s. Comparative FEA demonstrated that Carbon Fiber Unidirectional Composite is the superior wing material with a specific strength of 375.0 kJ/kg (over 3.5× greater than Aluminium 6061-T6 at 102.2 kJ/kg and 10× greater than Structural Steel at 31.8 kJ/kg), with Titanium (Ti-6Al-4V) serving as the optimal metallic alternative.'
   }
 ];
 
@@ -305,6 +340,26 @@ const INTERESTS_PHOTOS = [
 ];
 
 const CERTIFICATES = [
+  {
+    id: 'skylinespace-aircraft-design',
+    title: 'Aircraft Design Technology Internship & Project Trainee',
+    issuer: 'Skyline Space',
+    category: 'CAD & Simulation',
+    date: 'Jul - Aug 2026',
+    skills: ['Aircraft Design', 'Boeing 747 CAD', 'ANSYS Fluent CFD', 'FEA Structural', 'SolidWorks', 'Aerodynamics'],
+    thumb: 'assets/certificates/previews/Jaswanth_Kadali_SkylineSpace_Aircraft_Design_thumb.jpg',
+    pdf: 'assets/certificates/Jaswanth_Kadali_SkylineSpace_Aircraft_Design.pdf'
+  },
+  {
+    id: 'sae-addc-drone-2026',
+    title: 'Autonomous Drone Development Challenge (ADDC 2025-26) — Finalist',
+    issuer: 'SAE INDIA / SAEISS Southern Section',
+    category: 'Drones & Embedded',
+    date: 'Jan 2026',
+    skills: ['Autonomous Drone', 'SAE INDIA ADDC', 'Team VASISTAA', 'Flight Control', 'SRKR Engg College'],
+    thumb: 'assets/certificates/previews/Jaswanth_Kadali_SAE_ADDC_2026_Drone_Challenge_thumb.jpg',
+    pdf: 'assets/certificates/Jaswanth_Kadali_SAE_ADDC_2026_Drone_Challenge.pdf'
+  },
   {
     id: 'iit-delhi-ansys-cad',
     title: 'CAD Designing & ANSYS Analysis — Summer Internship Program',
