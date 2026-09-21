@@ -21,7 +21,7 @@ The portfolio is hosted directly on **GitHub Pages**:
    - FOMBI 2K25 National Winners, FOMBI 2K24 Runners-Up
 3. **Autonomous Wall Sander Robot — Kinematic Design**
    - Multi-axis reachability & uniform surface pressure kinematics in Autodesk Fusion 360
-4. **Siemens MCD — Digital Twin Simulation**
+4. **Siemens MCD Simulation**
    - Physics-accurate contact, multi-body friction, and sensor-actuator mechatronics simulation
 5. **Smart Auto-Shield LPG Leakage Detection & Exhaust System**
    - MQ-6 sensor, solenoid valve shut-off, and automated exhaust fan ventilation

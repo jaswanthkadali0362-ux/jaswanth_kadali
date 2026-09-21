@@ -14,7 +14,7 @@ const PROJECTS = [
     num: '01',
     category: 'Drones & UAV',
     title: 'NIDAR — Autonomous Agriculture Precision Drone',
-    summary: 'Built a fully autonomous quadcopter using Pixhawk Cube Orange flight controller and Jetson Nano onboard computer, featuring custom impact-absorbing arm geometry, GPS waypoint navigation, and real-time computer vision.',
+    summary: 'Built an autonomous precision agriculture system utilizing a two-drone cooperative workflow: one drone for scouting and scanning stressed crops via onboard computer vision, and a companion drone for targeted precision spraying.',
     cover: 'assets/projects/covers/nidar_drone_cover.svg',
     image: 'assets/projects/nidar/nidar_agri_drone.jpg',
     video: null,
@@ -25,17 +25,16 @@ const PROJECTS = [
       'Autonomy Stack': 'ArduPilot + ROS 2',
       'Frame': 'Custom Impact-Absorbing Arms'
     },
-        gallery: [
+    gallery: [
       { src: 'assets/projects/nidar/nidar_agri_drone.jpg', title: 'NIDAR Agriculture Drone & Quadcopter', desc: 'Precision agriculture sprayer drone with companion test quadcopter' },
       { src: 'assets/projects/nidar/nidar_team_noida.jpg?v=3.0.0', title: 'NIDAR National Challenge Team (Greater Noida)', desc: 'National Innovation Challenge for Drone Application and Research' },
       { src: 'assets/projects/nidar/nidar_drone.jpg', title: 'NIDAR 3D CAD Schematic & Avionics', desc: 'Pixhawk Cube Orange, Jetson Nano, Here3+ GPS & 30A ESC architecture' },
       { src: 'assets/projects/nidar/nidar_photo_1.jpg', title: 'Pixhawk Cube Orange Avionics', desc: 'Triple-redundant IMU mounting, vibration dampening & power distribution' },
       { src: 'assets/projects/nidar/nidar_photo_2.jpg', title: 'NVIDIA Jetson Nano AI Setup', desc: 'ROS 2 edge intelligence for real-time computer vision & telemetry' },
-      { src: 'assets/projects/nidar/nidar_quadcopter_frame_1.jpg', title: 'PID Flight Tuning Rig', desc: 'Single-axis pitch/roll stabilization test bench' },
-      { src: 'assets/projects/nidar/nidar_quadcopter_frame_2.jpg', title: 'Motor Thrust Response', desc: '30A ESC & 4S LiPo motor dynamics testing' }
+      { src: 'assets/projects/nidar/nidar_quadcopter_frame_1.jpg', title: 'PID Flight Tuning Rig', desc: 'Single-axis pitch/roll stabilization test bench' }
     ],
-    problem: 'Commercial drones lack the onboard intelligence required for fully autonomous missions in GPS-denied or complex environments, and standard frames fail to absorb hard landing impacts that damage electronics.',
-    objective: 'Design and build a fully autonomous quadcopter combining the Pixhawk Cube Orange flight controller for precision flight stabilization with a Jetson Nano for onboard AI inference, GPS waypoint navigation, and real-time obstacle awareness.',
+    problem: 'In precision agriculture, uniform field spraying causes severe pesticide overuse, high costs, and environmental damage. The challenge is selectively identifying and treating only stressed crops. Our workflow requires two coordinated drones: one dedicated scouting drone to scan and detect stressed plants using onboard intelligence and computer vision, and a second drone dedicated to precision spraying directly onto those stressed plants.',
+    objective: 'Design and deploy an autonomous two-drone precision agriculture workflow combining Pixhawk Cube Orange flight stabilization with Jetson Nano onboard AI: one drone scouts and scans fields to detect stressed crops, while the second drone performs precision spraying exclusively on the identified plants.',
     role: 'Lead Mechanical & Autonomous Systems Designer',
     mechanical: 'Custom high-toughness structural arm cross-section with internal flex-ribs for landing shock absorption. Frame optimized in CAD for thrust-to-weight ratio and Jetson Nano + Pixhawk mounting rigidity.',
     hardware: 'Pixhawk Cube Orange (IMU triple redundancy, ArduPilot), NVIDIA Jetson Nano (4GB), Here3+ GPS + Compass, telemetry radio, 4x BLDC motors, 30A ESCs, 4S LiPo, companion computer power board.',
@@ -106,26 +105,26 @@ const PROJECTS = [
   {
     id: 'siemens-mcd',
     num: '04',
-    category: 'CAD & Digital Twin',
-    title: 'Siemens MCD — Digital Twin Simulation',
-    summary: 'Physics-accurate digital twin modeling in Siemens NX & MCD: conveyor kinematics, slope dynamics, sensor-actuator logic and multi-body friction simulation.',
+    category: 'CAD & Simulation',
+    title: 'Siemens MCD Simulation',
+    summary: 'Physics-accurate simulation modeling in Siemens NX & MCD: conveyor kinematics, slope dynamics, sensor-actuator logic and multi-body friction simulation.',
     cover: 'assets/projects/covers/siemens_mcd_cover.svg',
     image: 'assets/projects/siemens_mcd/mcd_design_1_frame_1.jpg',
     video: 'assets/videos/siemens_mcd_design.mp4',
-    tags: ['Siemens NX', 'Siemens MCD', 'Digital Twin', 'Mechatronics', 'Physics Simulation'],
+    tags: ['Siemens NX', 'Siemens MCD', 'Mechatronics', 'Physics Simulation', 'Kinematics'],
     specs: {
       'Software': 'Siemens NX & MCD',
-      'Domain': 'Digital Twin / Mechatronics',
+      'Domain': 'Mechatronics & Simulation',
       'Engine': 'Rigid Body Dynamic Contacts',
       'Control': 'Sensor-Driven Automation'
     },
     gallery: [
-      { src: 'assets/projects/siemens_mcd/mcd_design_1_frame_1.jpg', title: 'Siemens MCD Conveyor Digital Twin', desc: 'Mechatronics sensor-actuator dynamic simulation' },
+      { src: 'assets/projects/siemens_mcd/mcd_design_1_frame_1.jpg', title: 'Siemens MCD Conveyor Simulation', desc: 'Mechatronics sensor-actuator dynamic simulation' },
       { src: 'assets/projects/siemens_mcd/mcd_slope_frame_1.jpg', title: 'Multi-Body Slope Friction Simulation', desc: 'Physics-accurate surface contact dynamics' },
       { src: 'assets/projects/siemens_mcd/nx_sim_1_frame_1.jpg', title: 'Siemens NX Mechanism Motion', desc: 'Kinematic joint limits & collision checks' }
     ],
-    problem: 'Physical commissioning of complex automated systems leads to expensive rework and mechanical collisions if logic is not validated on a digital replica first.',
-    objective: 'Build physics-accurate 3D digital twin models in Siemens MCD to simulate multi-body friction, slope dynamics, and sensor-actuator timing.',
+    problem: 'Physical commissioning of complex automated systems leads to expensive rework and mechanical collisions if logic is not validated on a simulation replica first.',
+    objective: 'Build physics-accurate 3D simulation models in Siemens MCD to simulate multi-body friction, slope dynamics, and sensor-actuator timing.',
     role: 'Mechatronics Simulation & CAD Specialist',
     mechanical: 'CAD assemblies imported into Siemens MCD with kinematic joints, rigid bodies, collision geometry, and surface friction coefficients defined.',
     hardware: 'Industrial sensor-actuator mapping, pneumatic cylinder models, belt conveyor drives.',

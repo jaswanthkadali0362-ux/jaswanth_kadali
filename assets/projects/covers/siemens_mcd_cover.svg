@@ -25,9 +25,9 @@
     <path d="M 780 530 L 750 530"/>
   </g>
   <!-- Category label top left -->
-  <text x="30" y="18" font-family="'JetBrains Mono', monospace" font-size="9" fill="#00c2c7" opacity="0.8" letter-spacing="2">CAD &amp; DIGITAL TWIN</text>
+  <text x="30" y="18" font-family="'JetBrains Mono', monospace" font-size="9" fill="#00c2c7" opacity="0.8" letter-spacing="2">CAD &amp; SIMULATION</text>
   <!-- Title label bottom left -->
-  <text x="30" y="540" font-family="'JetBrains Mono', monospace" font-size="9" fill="#00c2c7" opacity="0.6" letter-spacing="1">SIEMENS MCD  DIGITAL TWIN SIMULATION</text>
+  <text x="30" y="540" font-family="'JetBrains Mono', monospace" font-size="9" fill="#00c2c7" opacity="0.6" letter-spacing="1">SIEMENS MCD SIMULATION</text>
   <!-- Drawing content -->
   
   <!-- Conveyor body -->
