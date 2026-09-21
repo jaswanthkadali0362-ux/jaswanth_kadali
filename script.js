@@ -28,7 +28,7 @@ const PROJECTS = [
         gallery: [
       { src: 'assets/projects/nidar/nidar_agri_drone.jpg', title: 'NIDAR Agriculture Drone & Quadcopter', desc: 'Precision agriculture sprayer drone with companion test quadcopter' },
       { src: 'assets/projects/nidar/nidar_team_noida.jpg?v=3.0.0', title: 'NIDAR National Challenge Team (Greater Noida)', desc: 'National Innovation Challenge for Drone Application and Research' },
-      { src: 'assets/projects/nidar/nidar_drone.png', title: 'NIDAR 3D CAD Schematic & Avionics', desc: 'Pixhawk Cube Orange, Jetson Nano, Here3+ GPS & 30A ESC architecture' },
+      { src: 'assets/projects/nidar/nidar_drone.jpg', title: 'NIDAR 3D CAD Schematic & Avionics', desc: 'Pixhawk Cube Orange, Jetson Nano, Here3+ GPS & 30A ESC architecture' },
       { src: 'assets/projects/nidar/nidar_photo_1.jpg', title: 'Pixhawk Cube Orange Avionics', desc: 'Triple-redundant IMU mounting, vibration dampening & power distribution' },
       { src: 'assets/projects/nidar/nidar_photo_2.jpg', title: 'NVIDIA Jetson Nano AI Setup', desc: 'ROS 2 edge intelligence for real-time computer vision & telemetry' },
       { src: 'assets/projects/nidar/nidar_quadcopter_frame_1.jpg', title: 'PID Flight Tuning Rig', desc: 'Single-axis pitch/roll stabilization test bench' },
@@ -440,25 +440,35 @@ let lenis;
 
 function initLenis() {
   if (!window.Lenis) return;
+
+  // On touch/mobile devices, use native hardware-accelerated momentum scrolling
+  const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || window.innerWidth < 768;
+  if (isTouch) {
+    return;
+  }
+
   lenis = new Lenis({
-    duration: 1.3,
+    duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    smooth: true
+    smooth: true,
+    smoothTouch: false
   });
 
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-
-  // Connect Lenis to GSAP ScrollTrigger
-  if (window.gsap && window.ScrollTrigger) {
-    lenis.on('scroll', ScrollTrigger.update);
+  // Connect Lenis to GSAP ScrollTrigger ticker smoothly (single RAF loop)
+  if (window.gsap) {
+    if (window.ScrollTrigger) {
+      lenis.on('scroll', ScrollTrigger.update);
+    }
     gsap.ticker.add((time) => {
       lenis.raf(time * 1000);
     });
     gsap.ticker.lagSmoothing(0);
+  } else {
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
   }
 }
 
@@ -470,10 +480,9 @@ function initLoader() {
   const fill = document.getElementById('loader-progress-fill');
   if (!loader) return;
 
-  // Animate progress bar
+  // Complete progress bar immediately
   if (fill) {
-    setTimeout(() => { fill.style.width = '70%'; }, 50);
-    setTimeout(() => { fill.style.width = '100%'; }, 300);
+    fill.style.width = '100%';
   }
 
   const dismiss = () => {
@@ -485,11 +494,11 @@ function initLoader() {
       loader.style.display = 'none';
       document.body.classList.add('loaded');
       if (typeof animateHeroEntrance === 'function') animateHeroEntrance();
-    }, 400);
+    }, 250);
   };
 
-  setTimeout(dismiss, 500);
-  setTimeout(dismiss, 1000);
+  // Immediate smooth dismiss so visitors aren't blocked
+  setTimeout(dismiss, 150);
 
   // Safety fallback: make sure everything is visible
   setTimeout(() => {
@@ -499,7 +508,7 @@ function initLoader() {
       el.style.opacity = '1';
       el.style.transform = 'none';
     });
-  }, 1200);
+  }, 400);
 }
 
 /* ——————————————————————————————————————————————————————————————
@@ -577,8 +586,9 @@ function initHeroCanvas() {
   const canvas = document.getElementById('hero-canvas');
   if (!canvas || !window.THREE) return;
 
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  const isMobile = window.innerWidth < 768;
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: !isMobile, alpha: true, powerPreference: 'low-power' });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.25 : 1.75));
   renderer.setSize(canvas.clientWidth, canvas.clientHeight);
   renderer.setClearColor(0x000000, 0);
 
@@ -608,9 +618,9 @@ function initHeroCanvas() {
   const mesh2 = new THREE.Mesh(geo2, mat2);
   scene.add(mesh2);
 
-  // Point cloud
+  // Point cloud (fewer points on mobile)
   const ptGeo = new THREE.BufferGeometry();
-  const count = 300;
+  const count = isMobile ? 100 : 250;
   const positions = new Float32Array(count * 3);
   for (let i = 0; i < count; i++) {
     positions[i * 3 + 0] = (Math.random() - 0.5) * 120;
@@ -623,10 +633,12 @@ function initHeroCanvas() {
   scene.add(points);
 
   let mouseX = 0, mouseY = 0;
-  document.addEventListener('mousemove', (e) => {
-    mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-    mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
-  });
+  if (!isMobile) {
+    document.addEventListener('mousemove', (e) => {
+      mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+      mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+    }, { passive: true });
+  }
 
   window.addEventListener('resize', () => {
     const w = canvas.parentElement?.clientWidth || window.innerWidth;
@@ -634,12 +646,31 @@ function initHeroCanvas() {
     renderer.setSize(w, h);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
-  });
+  }, { passive: true });
 
   let t = 0;
+  let isHeroVisible = true;
+  let heroRafId = null;
+
+  if ('IntersectionObserver' in window) {
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isHeroVisible = entry.isIntersecting;
+        if (isHeroVisible && !heroRafId) {
+          heroRafId = requestAnimationFrame(animate);
+        }
+      });
+    }, { threshold: 0.05 });
+    heroObserver.observe(canvas);
+  }
+
   function animate() {
+    if (!isHeroVisible) {
+      heroRafId = null;
+      return;
+    }
     t += 0.003;
-    requestAnimationFrame(animate);
+    heroRafId = requestAnimationFrame(animate);
     mesh.rotation.x += 0.0015 + mouseY * 0.0008;
     mesh.rotation.y += 0.002 + mouseX * 0.001;
     mesh2.rotation.x -= 0.001;
@@ -650,7 +681,7 @@ function initHeroCanvas() {
     camera.lookAt(scene.position);
     renderer.render(scene, camera);
   }
-  animate();
+  heroRafId = requestAnimationFrame(animate);
 }
 
 /* ——————————————————————————————————————————————————————————————
@@ -660,8 +691,9 @@ function initDroneCanvas() {
   const canvas = document.getElementById('drone-canvas');
   if (!canvas || !window.THREE) return;
 
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  const isMobile = window.innerWidth < 768;
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: !isMobile, alpha: true, powerPreference: 'low-power' });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.25 : 1.75));
   const W = canvas.parentElement.clientWidth;
   const H = canvas.parentElement.clientHeight;
   renderer.setSize(W, H);
@@ -724,11 +756,13 @@ function initDroneCanvas() {
   });
 
   let mouseX = 0, mouseY = 0;
-  canvas.addEventListener('mousemove', (e) => {
-    const rect = canvas.getBoundingClientRect();
-    mouseX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-    mouseY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
-  });
+  if (!isMobile) {
+    canvas.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouseX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+      mouseY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+    }, { passive: true });
+  }
 
   window.addEventListener('resize', () => {
     const w = canvas.parentElement.clientWidth;
@@ -736,10 +770,29 @@ function initDroneCanvas() {
     renderer.setSize(w, h);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
-  });
+  }, { passive: true });
+
+  let isDroneVisible = true;
+  let droneRafId = null;
+
+  if ('IntersectionObserver' in window) {
+    const droneObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isDroneVisible = entry.isIntersecting;
+        if (isDroneVisible && !droneRafId) {
+          droneRafId = requestAnimationFrame(animate);
+        }
+      });
+    }, { threshold: 0.05 });
+    droneObserver.observe(canvas);
+  }
 
   function animate() {
-    requestAnimationFrame(animate);
+    if (!isDroneVisible) {
+      droneRafId = null;
+      return;
+    }
+    droneRafId = requestAnimationFrame(animate);
     drone.rotation.y += 0.006 + mouseX * 0.01;
     drone.rotation.x += (mouseY * 0.3 - drone.rotation.x) * 0.05;
     drone.position.y = Math.sin(Date.now() * 0.001) * 0.8;
@@ -751,7 +804,7 @@ function initDroneCanvas() {
 
     renderer.render(scene, camera);
   }
-  animate();
+  droneRafId = requestAnimationFrame(animate);
 }
 
 /* ——————————————————————————————————————————————————————————————
@@ -813,9 +866,9 @@ function renderProjects() {
     <div class="project-item" data-id="${p.id}">
       <div class="project-visual">
         ${p.video ? `
-          <video class="project-video-bg" src="${p.video}" muted loop playsinline preload="metadata"></video>
+          <video class="project-video-bg" data-src="${p.video}" poster="${p.image || ''}" muted loop playsinline preload="none"></video>
         ` : p.image ? `
-          <img class="project-img-bg" src="${p.image}" alt="${p.title}" loading="lazy">
+          <img class="project-img-bg" src="${p.image}" alt="${p.title}" loading="lazy" decoding="async">
         ` : `
           <object data="${p.cover}" type="image/svg+xml" class="project-svg-cover" aria-label="${p.title} technical diagram"></object>
         `}
@@ -836,12 +889,16 @@ function renderProjects() {
     </div>
   `).join('');
 
-  // High-performance IntersectionObserver: only play video when approaching/inside viewport
+  // High-performance IntersectionObserver: lazy-load and only play video when approaching viewport
   if ('IntersectionObserver' in window) {
     const videoObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         const video = entry.target;
         if (entry.isIntersecting) {
+          if (!video.src && video.dataset.src) {
+            video.src = video.dataset.src;
+            video.load();
+          }
           video.muted = true;
           video.play().catch(() => {});
         } else {
@@ -855,6 +912,9 @@ function renderProjects() {
     });
   } else {
     document.querySelectorAll('.project-video-bg').forEach(video => {
+      if (!video.src && video.dataset.src) {
+        video.src = video.dataset.src;
+      }
       video.muted = true;
       video.play().catch(() => {});
     });
@@ -881,7 +941,7 @@ function renderInterests() {
 
   grid.innerHTML = INTERESTS_PHOTOS.map(p => `
     <div class="interest-photo" tabindex="0" role="button" aria-label="View ${p.title}" data-img="${p.img}" data-title="${p.title}">
-      <img src="${p.img}" alt="${p.title}" loading="lazy">
+      <img src="${p.img}" alt="${p.title}" loading="lazy" decoding="async">
       <div class="interest-photo-overlay">EXPAND ↗</div>
     </div>
   `).join('');
@@ -907,7 +967,7 @@ function renderCertificates(filter = 'all') {
   grid.innerHTML = filtered.map((c) => `
     <div class="cert-card" data-id="${c.id}">
       <div class="cert-thumb-wrap" tabindex="0" role="button" aria-label="Zoom certificate ${c.title}">
-        <img src="${c.thumb}" alt="${c.title}" class="cert-thumb-img" loading="lazy">
+        <img src="${c.thumb}" alt="${c.title}" class="cert-thumb-img" loading="lazy" decoding="async">
         <div class="cert-thumb-overlay">
           <span>PREVIEW ↗</span>
         </div>

@@ -3,7 +3,7 @@
    Design System: Editorial × Technical × Immersive
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+/* Fonts loaded via <link rel="preload"> & <link rel="stylesheet"> in index.html */
 
 /* ——— CUSTOM PROPERTIES ——— */
 :root {
@@ -129,7 +129,7 @@ body.cursor-project #cursor-label { opacity: 1; color: var(--accent); }
   justify-content: center;
   gap: 2rem;
   transition: opacity 0.4s ease-out, visibility 0.4s ease-out;
-  animation: autoDismissLoader 0.4s 1.2s ease-in-out forwards;
+  animation: autoDismissLoader 0.3s 0.5s ease-in-out forwards;
 }
 
 @keyframes autoDismissLoader {
