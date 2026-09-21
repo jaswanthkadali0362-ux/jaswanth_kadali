@@ -7,7 +7,7 @@
 
 ## 🌐 Live Website
 The portfolio is hosted directly on **GitHub Pages**:
-🔗 **[Live Demo](https://jaswanthkadali.github.io)** *(or repository GitHub Pages URL)*
+🔗 **[Live Portfolio Demo](https://jaswanthkadali0362-ux.github.io/jaswanth_kadali/)**
 
 ---
 
