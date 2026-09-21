@@ -107,24 +107,77 @@ const PROJECTS = [
     num: '04',
     category: 'CAD & Simulation',
     title: 'Siemens MCD Simulation',
-    summary: 'Physics-accurate simulation modeling in Siemens NX & MCD: conveyor kinematics, slope dynamics, sensor-actuator logic and multi-body friction simulation.',
+    summary: 'Comprehensive mechatronics and kinematics simulation in Siemens NX & MCD: dynamic sorting conveyors, sensor-actuator logic, multi-stage material handling, slope friction physics, and multi-axis mechanical trajectories.',
     cover: 'assets/projects/covers/siemens_mcd_cover.svg',
-    image: 'assets/projects/siemens_mcd/mcd_design_1_frame_1.jpg',
-    video: 'assets/videos/siemens_mcd_design.mp4',
-    tags: ['Siemens NX', 'Siemens MCD', 'Mechatronics', 'Physics Simulation', 'Kinematics'],
+    image: 'assets/projects/siemens_mcd/sim_mcd_curved.jpg',
+    video: 'assets/videos/siemens_mcd_curved_conveyor.mp4',
+    tags: ['Siemens NX', 'Siemens MCD', 'Mechatronics', 'Physics Simulation', 'Sensor Automation', 'Kinematics'],
     specs: {
       'Software': 'Siemens NX & MCD',
       'Domain': 'Mechatronics & Simulation',
       'Engine': 'Rigid Body Dynamic Contacts',
       'Control': 'Sensor-Driven Automation'
     },
+    simulations: [
+      {
+        id: 'curved-conveyor',
+        title: 'MCD Dynamic Curved Conveyor & Sorting Automation',
+        desc: 'MCD simulation of centrifugal drift, curved path guidance, and multi-lane package sorting automation logic.',
+        video: 'assets/videos/siemens_mcd_curved_conveyor.mp4',
+        poster: 'assets/projects/siemens_mcd/sim_mcd_curved.jpg',
+        badge: 'Curved Conveyor'
+      },
+      {
+        id: 'sensor-transfer',
+        title: 'MCD Sensor-Driven Automated Part Transfer & Logic',
+        desc: 'Signal mapping from photoelectric sensors to pneumatic pusher actuators for automated material transfer sequencing.',
+        video: 'assets/videos/siemens_mcd_sensor_transfer.mp4',
+        poster: 'assets/projects/siemens_mcd/sim_mcd_sensor.jpg',
+        badge: 'Sensor Automation'
+      },
+      {
+        id: 'multistage-handling',
+        title: 'MCD Multi-Stage Material Handling Conveyor',
+        desc: 'Continuous throughput material flow modeling, regulated belt speeds, and collision-free buffer zone transfer.',
+        video: 'assets/videos/siemens_mcd_multistage_handling.mp4',
+        poster: 'assets/projects/siemens_mcd/sim_mcd_multistage.jpg',
+        badge: 'Material Handling'
+      },
+      {
+        id: 'slope-friction',
+        title: 'Multi-Body Slope Friction & Gravity Slide Simulation',
+        desc: 'Physics-accurate surface contact dynamics, sliding velocity, and friction coefficient response on inclined planes.',
+        video: 'assets/videos/siemens_mcd_slope_friction.mp4',
+        poster: 'assets/projects/siemens_mcd/sim_mcd_slope.jpg',
+        badge: 'Slope Physics'
+      },
+      {
+        id: 'nx-mechanism',
+        title: 'Siemens NX Mechanism Kinematics & Linkage Motion',
+        desc: 'Kinematic joint degree-of-freedom sweep, range of motion limits, and collision geometry verification in NX.',
+        video: 'assets/videos/siemens_nx_mechanism_kinematics.mp4',
+        poster: 'assets/projects/siemens_mcd/sim_nx_mechanism.jpg',
+        badge: 'NX Kinematics'
+      },
+      {
+        id: 'nx-gantry',
+        title: 'Siemens NX Multi-Axis Gantry & Trajectory Simulation',
+        desc: 'Multi-axis mechanical trajectory tracking, structural clearance, and dynamic motion study under operational loads.',
+        video: 'assets/videos/siemens_nx_gantry_simulation.mp4',
+        poster: 'assets/projects/siemens_mcd/sim_nx_gantry.jpg',
+        badge: 'Multi-Axis Motion'
+      }
+    ],
     gallery: [
-      { src: 'assets/projects/siemens_mcd/mcd_design_1_frame_1.jpg', title: 'Siemens MCD Conveyor Simulation', desc: 'Mechatronics sensor-actuator dynamic simulation' },
-      { src: 'assets/projects/siemens_mcd/mcd_slope_frame_1.jpg', title: 'Multi-Body Slope Friction Simulation', desc: 'Physics-accurate surface contact dynamics' },
-      { src: 'assets/projects/siemens_mcd/nx_sim_1_frame_1.jpg', title: 'Siemens NX Mechanism Motion', desc: 'Kinematic joint limits & collision checks' }
+      { src: 'assets/projects/siemens_mcd/sim_mcd_curved.jpg', title: 'Dynamic Curved Conveyor Sorting', desc: 'Centrifugal drift and package sorting logic in Siemens MCD' },
+      { src: 'assets/projects/siemens_mcd/sim_mcd_sensor.jpg', title: 'Sensor-Actuator Automated Transfer', desc: 'Photoelectric sensor triggered pneumatic pusher actuation' },
+      { src: 'assets/projects/siemens_mcd/sim_mcd_multistage.jpg', title: 'Multi-Stage Conveyor System', desc: 'Regulated belt speeds and material handling buffer zones' },
+      { src: 'assets/projects/siemens_mcd/sim_mcd_slope.jpg', title: 'Multi-Body Slope Friction', desc: 'Physics-accurate sliding friction dynamics in Siemens MCD' },
+      { src: 'assets/projects/siemens_mcd/sim_nx_mechanism.jpg', title: 'Siemens NX Mechanism Kinematics', desc: 'Multi-DOF linkage joint limits and motion analysis' },
+      { src: 'assets/projects/siemens_mcd/sim_nx_gantry.jpg', title: 'Siemens NX Gantry Simulation', desc: 'Multi-axis mechanical trajectory tracking and clearance' }
     ],
     problem: 'Physical commissioning of complex automated systems leads to expensive rework and mechanical collisions if logic is not validated on a simulation replica first.',
-    objective: 'Build physics-accurate 3D simulation models in Siemens MCD to simulate multi-body friction, slope dynamics, and sensor-actuator timing.',
+    objective: 'Build physics-accurate 3D simulation models in Siemens MCD and Siemens NX to simulate multi-body friction, slope dynamics, sensor-actuator timing, and multi-axis mechanical trajectories.',
     role: 'Mechatronics Simulation & CAD Specialist',
     mechanical: 'CAD assemblies imported into Siemens MCD with kinematic joints, rigid bodies, collision geometry, and surface friction coefficients defined.',
     hardware: 'Industrial sensor-actuator mapping, pneumatic cylinder models, belt conveyor drives.',
@@ -1088,9 +1141,27 @@ function openModal(id) {
       </div>
     ` : ''}
 
-    ${p.video ? `
+    ${p.simulations && p.simulations.length > 0 ? `
+      <div class="modal-section-title">Physical &amp; Mechatronic Simulation Library (${p.simulations.length} Interactive Video Demonstrations)</div>
+      <div class="modal-simulations-grid">
+        ${p.simulations.map(sim => `
+          <div class="sim-video-card">
+            <div class="sim-video-player-wrap">
+              <video src="${sim.video}" poster="${sim.poster}" controls preload="none" playsinline class="sim-video-player">
+                Your browser doesn't support HTML5 video.
+              </video>
+            </div>
+            <div class="sim-video-info">
+              <div class="sim-video-badge">${sim.badge}</div>
+              <h4 class="sim-video-title">${sim.title}</h4>
+              <p class="sim-video-desc">${sim.desc}</p>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    ` : p.video ? `
       <div class="modal-section-title">Project Video Demonstration</div>
-      <video class="modal-video" src="${p.video}" controls preload="metadata">
+      <video class="modal-video" src="${p.video}" controls preload="none">
         Your browser doesn't support HTML5 video.
       </video>
     ` : ''}

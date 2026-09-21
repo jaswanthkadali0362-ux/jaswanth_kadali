@@ -2689,15 +2689,94 @@ section { position: relative; }
   line-height: 1.35;
 }
 
+/* ─── MODAL SIMULATION VIDEO SHOWCASE ─── */
+.modal-simulations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.sim-video-card {
+  background: var(--black-2);
+  border: 1px solid var(--graphite);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.3s var(--ease-out-expo);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.sim-video-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 194, 199, 0.2);
+}
+
+.sim-video-player-wrap {
+  width: 100%;
+  aspect-ratio: 16/10;
+  background: #06060c;
+  overflow: hidden;
+}
+
+.sim-video-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sim-video-info {
+  padding: 1.25rem 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.sim-video-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(0, 194, 199, 0.1);
+  border: 1px solid rgba(0, 194, 199, 0.25);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.6rem;
+}
+
+.sim-video-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.35;
+  margin-bottom: 0.4rem;
+}
+
+.sim-video-desc {
+  font-size: 0.78rem;
+  color: var(--muted-2);
+  line-height: 1.5;
+}
+
 @media (max-width: 1024px) {
   .dhg-grid { grid-template-columns: repeat(2, 1fr); }
   .dhg-video-card { grid-template-columns: 1fr; gap: 2rem; padding: 1.75rem; }
   .drone-hardware-gallery { padding: 3rem 1.25rem 0; }
+  .modal-simulations-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
   .dhg-grid { grid-template-columns: 1fr; }
   .modal-gallery-grid { grid-template-columns: 1fr; }
+  .modal-simulations-grid { grid-template-columns: 1fr; }
   .dhg-video-card { padding: 1.25rem; }
 }
 
