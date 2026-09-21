@@ -216,7 +216,7 @@ const PROJECTS = [
     summary: 'Multi-body physics simulation of dynamic joint forces, torque requirements, and link movement under variable payload for actuator sizing.',
     cover: 'assets/projects/covers/physics_sim_cover.svg',
     image: 'assets/projects/robotics_physics/physics_sim_1_frame_1.jpg',
-    video: 'assets/videos/physics_robot_sim.mp4',
+    video: null,
     tags: ['Physics Simulation', 'Robot Dynamics', 'Joint Torque', 'Multi-Body', 'Actuator Sizing'],
     specs: {
       'Domain': 'Multi-Body Dynamics',
